@@ -1,0 +1,10 @@
+* {
+    /*Reseteando valores por defecto del navegador*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.div-prueba {
+    background-color: blue;
+}

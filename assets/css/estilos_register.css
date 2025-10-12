@@ -1,0 +1,170 @@
+* {
+    /*Reseteando valores por defecto del navegador*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*Variables que se reutilizan*/
+:root {
+    /*Colores principales de la pagina*/
+    --primary-color: #fcd772;
+    --secundary-color: #484745;
+    --terciary-color: #75d0fa;
+
+    /*Fuentes y tamaños de la pagina*/
+    --main-font: 'Montserrat', sans-serif;
+    --secundary-font: 'Playfair Display', serif;
+}
+
+body {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 45% 55%;
+    grid-template-rows: 1fr;
+    font-family: 'Montserrat', sans-serif;
+    color: #000000;
+    height: 100vh;
+    background: #242424;
+    background: radial-gradient(circle, rgba(36, 36, 36, 1) 0%, rgba(24, 24, 24, 1) 100%);
+}
+
+.left-container {
+    display: grid;
+    grid-template-rows: 95vh 5vh;
+}
+
+/*----------------Estilos referentes al formulario----------------*/
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 7%;
+    gap: 20px;
+}
+
+.form-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.form-title h1 {
+    font-family: 'Playfair Display', serif;
+    color: #d4af37;
+    font-size: 45px;
+}
+
+.form-title span {
+    font-size: 15px;
+    color: #d7d7d7;
+}
+
+.form_group{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 50%;
+}
+
+.form_group_label {
+    font-size: 15px;
+    color: #d7d7d7;
+}
+
+.input-text {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #555;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    font-size: 14px;
+    outline: none;
+    transition: border 0.3s;
+}
+
+.input-text:focus {
+    border: 1px solid #d4af37;
+    box-shadow: 0 0 6px #d4af37;
+}
+
+.input-text:focus {
+    outline: none;               /* quita el borde azul predeterminado */
+    border-color: #4f8ef7;       /* cambia el color del borde */
+    box-shadow: 0 0 5px #4f8ef755; 
+}
+
+.input-button {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(90deg, #d4af37, #f5d76e);
+    border: none;
+    border-radius: 8px;
+    font-weight: normal;
+    color: #000;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.input-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #d4af37;
+}
+
+/*--------------Estilos referentes al link que redirige al login--------------*/
+.left-container-bottom {
+    margin-left: 20px;
+    width: 40%;
+}
+
+.left-container-bottom span {
+    color: #d7d7d7;
+    font-size: 14px;
+}
+
+.left-container-bottom span a {
+    color: #a88a29;
+}
+
+/*Estilos referentes al contenedor derecho*/
+.right_container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 95vh;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+
+.right_container_img {
+    width: 70%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 15px;
+    background-color: red;
+}
+
+.right_container_img img{
+    width: 100%;
+    height: auto;
+}
+
+.right_container_logo {
+    display: flex;
+    width: 35%;
+    height: 40%;
+}
+
+.right_container_logo img{
+    width: 100%;
+    height: auto;
+}
+
+
+
+

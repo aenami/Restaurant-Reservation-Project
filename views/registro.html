@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - Restaurante Elegante</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/estilos2.css">
+    </head>
+<body>
+    <div class="form-container">
+        <h1>Reserva tu experiencia</h1>
+        <form id="registroForm">
+        <div class="form-group">
+            <label for="nombre">Nombre completo</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Juan Pérez" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+        </div>
+        <div class="form-group">
+            <label for="telefono">Teléfono</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="+57 300 123 4567" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Contraseña</label>
+            <input type="password" id="password" name="password" placeholder="********" required>
+        </div>
+        <button type="submit" class="btn">Crear cuenta</button>
+        </form>
+        <p class="login-link">
+        ¿Ya tienes cuenta? <a href="#">Inicia sesión aquí</a>
+        </p>
+    </div>
+
+    <div class="logo">
+        <img src="assets/imagenes/Imagen_Logo.png" alt="">
+    </div>
+    <script src="assets/javascript/backend2.js"></script>
+</body>
