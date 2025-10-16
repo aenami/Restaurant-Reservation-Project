@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.slider {
+  overflow: hidden;         /* Oculta las imágenes que se salen */
+  white-space: nowrap;      /* Evita saltos de línea */
+  width: 100%;              /* O el ancho que desees */
+}
+
+.slider-track {
+  display: flex;
+  animation: scroll 20s linear infinite; /* Movimiento continuo */
+}
+
+.slider-track img {
+  width: 200px;             /* Tamaño fijo de cada imagen */
+  height: auto;
+  margin-right: 10px;
+  border-radius: 12px;      /* Bordes redondeados si deseas */
+}
+
+/* Animación */
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* Se mueve hasta la mitad del track duplicado */
+}
