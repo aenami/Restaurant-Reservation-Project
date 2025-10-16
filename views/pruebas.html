@@ -9,23 +9,48 @@
 </head>
 
 <body>
-    <div class="slider">
-        <div class="slider-track">
-            <img src="../assets/imagenes/menu/Carrousel/Waffles.jpg" alt="img1" class="img1">
-            <img src="../assets/imagenes/menu/Carrousel/Ancheta.jpg" alt="img2" class="img2">
-            <img src="../assets/imagenes/menu/Carrousel/Curry.jpg" alt="img3" class="img3">
-            <img src="../assets/imagenes/menu/Carrousel/Ensalada.jpg" alt="img4" class="img4">
-            <img src="../assets/imagenes/menu/Carrousel/Pizza.jpg" alt="img5" class="img5">
-            <img src="../assets/imagenes/menu/Carrousel/Sopita.jpg" alt="img6" class="img6">
-            <!-- duplicamos las imágenes para lograr el bucle suave -->
-            <img src="../assets/imagenes/menu/Carrousel/Waffles.jpg" alt="img1" class="img1">
-            <img src="../assets/imagenes/menu/Carrousel/Ancheta.jpg" alt="img2" class="img2">
-            <img src="../assets/imagenes/menu/Carrousel/Curry.jpg" alt="img3" class="img3">
-            <img src="../assets/imagenes/menu/Carrousel/Ensalada.jpg" alt="img4" class="img4">
-            <img src="../assets/imagenes/menu/Carrousel/Pizza.jpg" alt="img5" class="img5">
-            <img src="../assets/imagenes/menu/Carrousel/Sopita.jpg" alt="img6" class="img6">
-        </div>
-    </div>
+    <nav>
+        <ul>
+            <li><a href="#" onclick="mostrarSeccion('menu')">Menú</a></li>
+            <li><a href="#" onclick="mostrarSeccion('historial')">Historial</a></li>
+            <li><a href="#" onclick="mostrarSeccion('reserva')">Reserva</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Sección del Menú -->
+        <section id="menu" class="seccion activa">
+            <h2>Menú</h2>
+            <p>Aquí puedes ver todos los platos disponibles.</p>
+        </section>
+
+        <!-- Sección del Historial -->
+        <section id="historial" class="seccion">
+            <h2>Historial</h2>
+            <p>Consulta tus pedidos anteriores aquí.</p>
+        </section>
+
+        <!-- Sección de Reserva -->
+        <section id="reserva" class="seccion">
+            <h2>Reserva</h2>
+            <form>
+                <label>Nombre: <input type="text" required></label><br>
+                <label>Fecha: <input type="date" required></label><br>
+                <label>Hora: <input type="time" required></label><br>
+                <button type="submit">Enviar reserva</button>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        function mostrarSeccion(id) {
+            // Oculta todas las secciones
+            document.querySelectorAll('.seccion').forEach(sec => sec.classList.remove('activa'));
+            // Muestra solo la seleccionada
+            document.getElementById(id).classList.add('activa');
+        }
+    </script>
+
 </body>
 
 </html>

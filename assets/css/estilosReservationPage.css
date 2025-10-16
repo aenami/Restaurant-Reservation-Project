@@ -113,7 +113,7 @@
     margin-right: 10px;
     border-radius: 10px;   
     border-style: solid;
-    background-color: #0d3a4a;
+    border-color: #dddad4;
 }
 
 .img1 {
@@ -157,8 +157,27 @@
   100% { transform: translateX(-50%); } /* Se mueve hasta la mitad del track duplicado */
 }
 
+/*---------Css referente a el cambio de secciones----------*/
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
+    animation: aparecer 0.4s ease;
+}
+
+@keyframes aparecer {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 /*-------------Css referente a la seccion del menu-------------*/
-.menu-section {
+#menu-section {
+    /* dejar vacío: el layout se aplica sólo cuando está .active o .leaving */
+}
+
+#menu-section.active {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -166,14 +185,40 @@
     gap: 50px;
 }
 
+/* garantizar que las secciones en salida permanezcan visibles para la animación */
+.section.leaving {
+    display: block; /* se muestra durante la animación */
+    animation: desaparecer 0.35s ease forwards;
+}
 
+/* si es específicamente el menú, mantener el layout flex mientras sale */
+#menu-section.leaving {
+    display: flex;
+}
+
+/* animación de desaparición */
+@keyframes desaparecer {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+/* cuando el menú está activo necesita layout flex */
+#menu-section.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+/*-------------Css referente a la seccion del menu-------------*/
 .typeMenu {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 20px;
-    max-width: 85%;
+    max-width: 80%;
     padding: 20px 20px;
     border-radius: 10px;
 }
@@ -181,6 +226,7 @@
 .typeMenu-title {
     font-size: 35px;
     color: #0d3a4a;
+    text-align: center;
 }
 
 .menu {
@@ -203,7 +249,7 @@
     gap: 30px;
     overflow-wrap: break-word; /* Para que el texto no se haga muy largo y se desborde*/
     /* From https://css.glass */
-    background: rgba(252, 215, 114, 1);
+    background: #dddad4;
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
@@ -227,7 +273,7 @@
 .menu-platillo-info {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 10px;
 }
 
 .platillo-title {
@@ -237,3 +283,5 @@
 .platillo-precio {
     font-size: 20px;
 }
+
+/*-----------Css referente a la seccion del historial-------------*/
