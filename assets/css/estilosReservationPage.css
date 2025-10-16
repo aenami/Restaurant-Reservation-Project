@@ -7,7 +7,6 @@
 .main {
     width: 100%;
     height: 100%;
-    background-color: #282726;
 }
 
 /*--------------Barra de navegacion-------------*/
@@ -81,22 +80,21 @@
     border-radius: 50%;
 }
 
-/*-------------------------*/
-.main-section {
-    margin-top: 2%;
-}
-
 /*------------Css referente al carrousel infinito y titulo---------*/
 .hero {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
     width: 100%;
+    height: 90vh;
+    padding-top: 2%;
     gap: 15px;
+    background-color: #282726;
 }
 
 .hero span {
-    font-size: 60px;
+    font-size: 70px;
     color: #d4af37;
 }
 
@@ -114,6 +112,8 @@
 .slider-track img {
     margin-right: 10px;
     border-radius: 10px;   
+    border-style: solid;
+    background-color: #0d3a4a;
 }
 
 .img1 {
@@ -174,14 +174,13 @@
     justify-content: center;
     gap: 20px;
     max-width: 85%;
-
-    padding: 20px 30px;
+    padding: 20px 20px;
     border-radius: 10px;
 }
 
 .typeMenu-title {
     font-size: 35px;
-    color: #dddad4;
+    color: #0d3a4a;
 }
 
 .menu {
@@ -215,6 +214,7 @@
 /*El ancho de este contenedor debe poder variar y por lo tanto no le puedo definir el width*/
 .menu-platillo-conjunto {
     display: flex;
+    align-items: center;
     gap: 15px;
 }
 
