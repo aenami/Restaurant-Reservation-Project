@@ -4,51 +4,37 @@
     padding: 0;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  background-color: #fafafa;
-  margin: 0;
+.icono-mesa {
+  width: 100px;
+  cursor: pointer; /* Hace que parezca clickeable */
+  transition: transform 0.2s;
 }
 
-nav {
-  background-color: #333;
-  padding: 10px;
+.icono-mesa:hover {
+  transform: scale(1.05);
 }
 
-nav ul {
-  list-style: none;
+.modal {
+  position: fixed; /* Se queda centrado en toda la pantalla */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente */
   display: flex;
   justify-content: center;
-  gap: 20px;
-  margin: 0;
-  padding: 0;
+  align-items: center;
 }
 
-nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-nav a:hover {
-  color: #ffd700;
-}
-
-main {
+.modal-contenido {
+  background: white;
   padding: 20px;
+  border-radius: 10px;
+  width: 400px;
   text-align: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 
-.seccion {
+.oculto {
   display: none;
-}
-
-.seccion.activa {
-  display: block;
-  animation: aparecer 0.4s ease;
-}
-
-@keyframes aparecer {
-  from { opacity: 0; }
-  to { opacity: 1; }
 }

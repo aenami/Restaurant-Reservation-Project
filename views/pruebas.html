@@ -6,50 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Documento de pruebas</title>
     <link rel="stylesheet" href="pruebas.css">
+    <script src="pruebas.js"></script>
 </head>
 
 <body>
-    <nav>
-        <ul>
-            <li><a href="#" onclick="mostrarSeccion('menu')">Menú</a></li>
-            <li><a href="#" onclick="mostrarSeccion('historial')">Historial</a></li>
-            <li><a href="#" onclick="mostrarSeccion('reserva')">Reserva</a></li>
-        </ul>
-    </nav>
+    <!-- Ícono de mesa -->
+    <img id="mesa-icono" src="../assets/imagenes/historial/mesa2.png" alt="Mesa" class="icono-mesa">
 
-    <main>
-        <!-- Sección del Menú -->
-        <section id="menu" class="seccion activa">
-            <h2>Menú</h2>
-            <p>Aquí puedes ver todos los platos disponibles.</p>
-        </section>
-
-        <!-- Sección del Historial -->
-        <section id="historial" class="seccion">
-            <h2>Historial</h2>
-            <p>Consulta tus pedidos anteriores aquí.</p>
-        </section>
-
-        <!-- Sección de Reserva -->
-        <section id="reserva" class="seccion">
-            <h2>Reserva</h2>
-            <form>
-                <label>Nombre: <input type="text" required></label><br>
-                <label>Fecha: <input type="date" required></label><br>
-                <label>Hora: <input type="time" required></label><br>
-                <button type="submit">Enviar reserva</button>
-            </form>
-        </section>
-    </main>
-
-    <script>
-        function mostrarSeccion(id) {
-            // Oculta todas las secciones
-            document.querySelectorAll('.seccion').forEach(sec => sec.classList.remove('activa'));
-            // Muestra solo la seleccionada
-            document.getElementById(id).classList.add('activa');
-        }
-    </script>
+    <!-- Apartado que aparecerá -->
+    <div id="apartado" class="modal oculto">
+        <div class="modal-contenido">
+            <h2>Reserva de Mesa</h2>
+            <p>Información o formulario aquí...</p>
+            <button id="cerrar">Cerrar</button>
+        </div>
+    </div>
 
 </body>
 

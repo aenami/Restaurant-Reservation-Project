@@ -9,6 +9,10 @@
     height: 100%;
 }
 
+body {
+    background-color: #282726;
+}
+
 /*--------------Barra de navegacion-------------*/
 .navbar {
     display: flex;
@@ -72,11 +76,12 @@
     gap: 15px;
     border-radius: 10px;
     background-color: white;
+    margin-right: 2%;
 }
 
 .navbar-userInfo img {
-    width: 50px;
-    height: 50px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
 }
 
@@ -96,6 +101,12 @@
 .hero span {
     font-size: 70px;
     color: #d4af37;
+}
+
+@media (max-width: 680px){
+    .hero span {
+        font-size: 50px;
+    }
 }
 
 .slider {
@@ -225,9 +236,10 @@
 
 .typeMenu-title {
     font-size: 35px;
-    color: #0d3a4a;
+    color: #dddad4;
     text-align: center;
 }
+
 
 .menu {
     display: grid;
@@ -266,6 +278,7 @@
 
 .platillo-img {
     width: 30%;
+    min-width: 80px;
     height: 30%;
     border-radius: 7px;
 }
@@ -285,3 +298,75 @@
 }
 
 /*-----------Css referente a la seccion del historial-------------*/
+#history-section {
+    padding: 3%;
+}
+
+.reservations {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+}
+
+.futureReservations {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.futureReservation, .pastReservation {
+    display: flex;
+    flex-direction: row;
+    gap: 5%;
+    padding: 10px;
+    background-color: white;
+    max-width: 800px;
+    border-radius: 4px;
+}
+
+.futureReservations-title, .pastReservations-title {
+    font-size: 30px;
+    color: #d4af37;
+}
+
+.reservationDate, .tableReserved, .saucer {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    gap: 7px;
+}
+
+.reservationDate {
+    border-radius: 5px;
+    background-color: #eceef9;
+}
+
+.futureReservation button, .pastReservation button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 16px;     
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.tableReserved span:first-child, .saucer span:first-child {
+    font-size: 18px;
+}
+
+.fSaucer, .NTable {
+    color: #6a6966;
+}
+
+.img-cancelar {
+    width: 25px;
+    height: 25px;
+}
+
+/*-------Css referente a la seccion de las reservas--------*/
+
+
+
