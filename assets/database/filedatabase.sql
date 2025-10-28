@@ -5,9 +5,9 @@ INSERT INTO roles VALUES
 (2, "Cliente");
 
 INSERT INTO clientes VALUES
-('25545884', 'Venus Eliana', '3147338048', 'Venus123', 2),
-('1059238559', 'Julian Andres', '3128753244', 'Julian123', 1),
-('1080923', 'David Diaz', '3028763233', 'Davidsapo', 1);
+('25545884', 'Venus Eliana', 'eliana@gmail.com','3147338048', 'Venus123', 2),
+('1059238559', 'Julian Andres', 'juliannandres05@gmail.com','3128753244', 'Julian123', 1),
+('1080923', 'David Diaz', 'david@gmail.com','3028763233', 'Davidsapo', 1);
 
 INSERT INTO tipo_platillos VALUES
 (null, 'Entrada'),

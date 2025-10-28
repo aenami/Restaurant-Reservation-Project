@@ -43,6 +43,7 @@ CREATE TABLE IF NOT EXISTS tipo_platillos(
 CREATE TABLE IF NOT EXISTS clientes(
     cedula_cliente VARCHAR(12) COLLATE utf8_unicode_ci PRIMARY KEY,
     nombre_cliente VARCHAR(50) COLLATE utf8_unicode_ci NOT NULL,
+    email_cliente VARCHAR(150) COLLATE utf8_unicode_ci NOT NULL,
     telefono_cliente VARCHAR(15) COLLATE utf8_unicode_ci NOT NULL,
     contraseña_cliente VARCHAR(80) COLLATE utf8_unicode_ci NOT NULL,
     id_rol_cliente TINYINT UNSIGNED NOT NULL -- FOREIGN KEY AQUI
