@@ -61,58 +61,10 @@
 
                 <div class="typeMenu">
                     <span class="typeMenu-title">Desayuno menú especial</span>
-                    <div class="menu">
-                        <div class="menu-platillo">
-                            <div class="menu-platillo-conjunto">
-                                <img src="assets/imagenes/menu/platillos/platillo12.jpg" alt="platillo1"
-                                    class="platillo-img">
-                                <div class="menu-platillo-info">
-                                    <span class="platillo-title">Crispy chicken poblano</span>
-                                    <span class="platillo-ingredients">Pollo a la brasa, queso cheddar, tomate,
-                                        pimienta</span>
-                                </div>
-                            </div>
-                            <span class="platillo-precio">$45.000</span>
-                        </div>
-
-                        <div class="menu-platillo">
-                            <div class="menu-platillo-conjunto">
-                                <img src="assets/imagenes/menu/platillos/platillo1.jpg" alt="platillo1"
-                                    class="platillo-img">
-                                <div class="menu-platillo-info">
-                                    <span class="platillo-title">Crispy chicken poblano</span>
-                                    <span class="platillo-ingredients">Pollo a la brasa, queso cheddar, tomate,
-                                        pimienta</span>
-                                </div>
-                            </div>
-                            <span class="platillo-precio">$45.000</span>
-                        </div>
-
-                        <div class="menu-platillo">
-                            <div class="menu-platillo-conjunto">
-                                <img src="assets/imagenes/menu/platillos/platillo2.jpg" alt="platillo1"
-                                    class="platillo-img">
-                                <div class="menu-platillo-info">
-                                    <span class="platillo-title">Crispy chicken poblano</span>
-                                    <span class="platillo-ingredients">Pollo a la brasa, queso cheddar, tomate,
-                                        pimienta</span>
-                                </div>
-                            </div>
-                            <span class="platillo-precio">$45.000</span>
-                        </div>
-
-                        <div class="menu-platillo">
-                            <div class="menu-platillo-conjunto">
-                                <img src="assets/imagenes/menu/platillos/platillo3.jpg" alt="platillo1"
-                                    class="platillo-img">
-                                <div class="menu-platillo-info">
-                                    <span class="platillo-title">Crispy chicken poblano</span>
-                                    <span class="platillo-ingredients">Pollo a la brasa, queso cheddar, tomate,
-                                        pimienta</span>
-                                </div>
-                            </div>
-                            <span class="platillo-precio">$45.000</span>
-                        </div>
+                    <div class="menu">                   
+                        <?php
+                            require_once 'inicio.php'
+                        ?>
                     </div>
                 </div>
 
@@ -132,44 +84,7 @@
                             <span class="platillo-precio">$45.000</span>
                         </div>
 
-                        <div class="menu-platillo">
-                            <div class="menu-platillo-conjunto">
-                                <img src="assets/imagenes/menu/platillos/platillo5.jpg" alt="platillo1"
-                                    class="platillo-img">
-                                <div class="menu-platillo-info">
-                                    <span class="platillo-title">Crispy chicken poblano</span>
-                                    <span class="platillo-ingredients">Pollo a la brasa, queso cheddar, tomate,
-                                        pimienta</span>
-                                </div>
-                            </div>
-                            <span class="platillo-precio">$45.000</span>
-                        </div>
-
-                        <div class="menu-platillo">
-                            <div class="menu-platillo-conjunto">
-                                <img src="assets/imagenes/menu/platillos/platillo6.jpg" alt="platillo1"
-                                    class="platillo-img">
-                                <div class="menu-platillo-info">
-                                    <span class="platillo-title">Crispy chicken poblano</span>
-                                    <span class="platillo-ingredients">Pollo a la brasa, queso cheddar, tomate,
-                                        pimienta</span>
-                                </div>
-                            </div>
-                            <span class="platillo-precio">$45.000</span>
-                        </div>
-
-                        <div class="menu-platillo">
-                            <div class="menu-platillo-conjunto">
-                                <img src="assets/imagenes/menu/platillos/platillo7.jpg" alt="platillo1"
-                                    class="platillo-img">
-                                <div class="menu-platillo-info">
-                                    <span class="platillo-title">Crispy chicken poblano</span>
-                                    <span class="platillo-ingredients">Pollo a la brasa, queso cheddar, tomate,
-                                        pimienta</span>
-                                </div>
-                            </div>
-                            <span class="platillo-precio">$45.000</span>
-                        </div>
+                        
                     </div>
                 </div>
 
@@ -189,44 +104,7 @@
                             <span class="platillo-precio">$45.000</span>
                         </div>
 
-                        <div class="menu-platillo">
-                            <div class="menu-platillo-conjunto">
-                                <img src="assets/imagenes/menu/platillos/platillo9.jpg" alt="platillo1"
-                                    class="platillo-img">
-                                <div class="menu-platillo-info">
-                                    <span class="platillo-title">Crispy chicken poblano</span>
-                                    <span class="platillo-ingredients">Pollo a la brasa, queso cheddar, tomate,
-                                        pimienta</span>
-                                </div>
-                            </div>
-                            <span class="platillo-precio">$45.000</span>
-                        </div>
-
-                        <div class="menu-platillo">
-                            <div class="menu-platillo-conjunto">
-                                <img src="assets/imagenes/menu/platillos/platillo10.jpg" alt="platillo1"
-                                    class="platillo-img">
-                                <div class="menu-platillo-info">
-                                    <span class="platillo-title">Crispy chicken poblano</span>
-                                    <span class="platillo-ingredients">Pollo a la brasa, queso cheddar, tomate,
-                                        pimienta</span>
-                                </div>
-                            </div>
-                            <span class="platillo-precio">$45.000</span>
-                        </div>
-
-                        <div class="menu-platillo">
-                            <div class="menu-platillo-conjunto">
-                                <img src="assets/imagenes/menu/platillos/platillo11.jpg" alt="platillo1"
-                                    class="platillo-img">
-                                <div class="menu-platillo-info">
-                                    <span class="platillo-title">Crispy chicken poblano</span>
-                                    <span class="platillo-ingredients">Pollo a la brasa, queso cheddar, tomate,
-                                        pimienta</span>
-                                </div>
-                            </div>
-                            <span class="platillo-precio">$45.000</span>
-                        </div>
+                        
                     </div>
                 </div>
             </section>

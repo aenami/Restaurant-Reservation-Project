@@ -1,3 +1,8 @@
+<?php
+    require_once 'config/parameters.php';
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,13 +10,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login | Cava & Corte</title>
-    <link rel="stylesheet" href="../assets/css/estilos_login.css">
+    <link rel="stylesheet" href="<?=base_url?>assets/css/estilos_login.css">
 </head>
 
 <body>
     <main class="main">
         <div class="textInfo">
-            <img src="../assets/imagenes/Imagen_Logo.png" alt="Logo Cava & Corte">
+            <img src="<?=base_url?>assets/imagenes/Imagen_Logo.png" alt="Logo Cava & Corte">
             <div class="textInfo-titulo">
                 <h1>Cava & Corte</h1>
                 <h2>| Login</h2>
@@ -35,7 +40,7 @@
             </div>
             <input type="button" value="Continuar" class="btn">
             <span>━━━━ or ━━━━</span>
-            <span>Eres nuevo? <a href="#">Create una cuenta</a></span>
+            <span>Eres nuevo? <a href="<?=base_url?>">Create una cuenta</a></span>
         </form>
 
     </main>

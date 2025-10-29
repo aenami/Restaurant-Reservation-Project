@@ -1,17 +1,22 @@
 <?php
+    require_once 'config/parameters.php';
     require_once 'backend/platillos.php';
-    //$platillo = new Platillos();
-    //$platillos = $platillo->getPlatillos();
+    $platillo = new Platillo();
+    $platillos = $platillo->getPlatillos();
 ?>
 
-<!-- Catalogo de productos -->
-
-<div class='Conthcc'>
-    <div class='Platillo'>
-        <img src="assets/imagenes/platillos/carne-wagyu.jpg" alt="">
-        <h3>Nombre Imagen</h3>
-        <p>$2.700.000</p>
-        <a href="#" class='bt1'>Comprar</a>
+<!-- Catalogo de platillos -->
+<?php while($dato = $platillos->fetch_object()):?>
+    <div class="menu-platillo">
+        <div class="menu-platillo-conjunto">
+            <img src="assets/imagenes/menu/platillos/<?=$dato->ruta_imagen ?>" alt="platillo1"
+                class="platillo-img">
+            <div class="menu-platillo-info">
+                <span class="platillo-title"><?=$dato->nombre_platillo?></span>
+                <span class="platillo-ingredients"><?=$dato->descripcion_platillo?></span>
+            </div>
+        </div>
+        <span class="platillo-precio">$<?=$dato->precio_platillo?></span>
     </div>
-    
-</div>
+<?php endwhile; ?>
+

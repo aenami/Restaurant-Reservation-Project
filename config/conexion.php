@@ -11,14 +11,16 @@
                     'server' => 'localhost',
                     'user' => 'root',
                     'pass' => '',
-                    'db' => 'restaurante'
+                    'db' => 'restaurante',
+                    'port' => 3307,
                 ];
-                $conn = new mysqli($db['server'], $db['user'], $db['pass'], $db['db']);
+                $conn = new mysqli($db['server'], $db['user'], $db['pass'], $db['db'], $db['port']);
 
             }catch(Exception $er){
-                echo 'Error: '.$e->getMessage();
+                echo 'Error: '.$er->getMessage();
                 exit();
             }
+            return $conn;
         }
     }
 ?>

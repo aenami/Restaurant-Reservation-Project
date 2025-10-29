@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS mesas(
     tamaño_mesa TINYINT Not NULL,
     coste_mesa DECIMAL(10,2) NOT NULL,
     ubicacion_mesa VARCHAR(40) COLLATE utf8_unicode_ci NOT NULL,
-    disponibilidad_mesa BOOLEAN 
+    disponibilidad_mesa BOOLEAN DEFAULT FALSE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1;
 
 -- 03
