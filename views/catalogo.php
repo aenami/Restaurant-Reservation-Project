@@ -2,7 +2,7 @@
     require_once 'config/parameters.php';
     require_once 'backend/platillos.php';
     $platillo = new Platillo();
-    $platillos = $platillo->getPlatillos();
+    $platillos = $platillo->getPlatillos($categoria ?? null);
 ?>
 
 <!-- Catalogo de platillos -->

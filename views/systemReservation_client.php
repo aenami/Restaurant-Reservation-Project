@@ -63,7 +63,8 @@
                     <span class="typeMenu-title">Desayuno menú especial</span>
                     <div class="menu">                   
                         <?php
-                            require_once 'inicio.php'
+                            $categoria = "1"; //Id de la categoria de desayuno
+                            include 'catalogo.php';
                         ?>
                     </div>
                 </div>
@@ -71,40 +72,20 @@
                 <div class="typeMenu">
                     <span class="typeMenu-title">Almuerzo menú especial</span>
                     <div class="menu">
-                        <div class="menu-platillo">
-                            <div class="menu-platillo-conjunto">
-                                <img src="assets/imagenes/menu/platillos/platillo4.jpg" alt="platillo1"
-                                    class="platillo-img">
-                                <div class="menu-platillo-info">
-                                    <span class="platillo-title">Crispy chicken poblano</span>
-                                    <span class="platillo-ingredients">Pollo a la brasa, queso cheddar, tomate,
-                                        pimienta</span>
-                                </div>
-                            </div>
-                            <span class="platillo-precio">$45.000</span>
-                        </div>
-
-                        
+                        <?php
+                            $categoria = "2"; //Id de la categoria del almuerzo
+                            include 'catalogo.php';
+                        ?>
                     </div>
                 </div>
 
                 <div class="typeMenu">
                     <span class="typeMenu-title">Cena menú especial</span>
                     <div class="menu">
-                        <div class="menu-platillo">
-                            <div class="menu-platillo-conjunto">
-                                <img src="assets/imagenes/menu/platillos/platillo8.jpg" alt="platillo1"
-                                    class="platillo-img">
-                                <div class="menu-platillo-info">
-                                    <span class="platillo-title">Crispy chicken poblano</span>
-                                    <span class="platillo-ingredients">Pollo a la brasa, queso cheddar, tomate,
-                                        pimienta</span>
-                                </div>
-                            </div>
-                            <span class="platillo-precio">$45.000</span>
-                        </div>
-
-                        
+                        <?php
+                            $categoria = "3"; //Id de la categoria de la cena
+                            include 'catalogo.php';
+                        ?>
                     </div>
                 </div>
             </section>

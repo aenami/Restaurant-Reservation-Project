@@ -8,16 +8,39 @@
             $this->db = Connection::connect();
         }
 
-        public function getPlatillos($limit = 7){
+        public function getPlatillos($categoria = null, $limit = 7){
             $result = false;
-            $sql = "SELECT id_platillo, nombre_platillo, descripcion_platillo, precio_platillo, id_tipo_platillo, ruta_imagen
-                    FROM platillos, imagenes_platillo WHERE id_platillo = id_platillo_imagen
-                    Group By id_platillo Order By RAND() limit $limit";
+
+            $categoria = intval($categoria);
+            $limit = intval($limit);
+
+            $sql = "
+                SELECT p.*, i.*
+                FROM platillos p
+                JOIN imagenes_platillo i
+                    ON p.id_platillo = i.id_platillo_imagen
+            ";
+
+            if ($categoria !== 0) {
+                $sql .= " WHERE p.id_tipo_platillo = $categoria";
+            }
+
+            $sql .= "
+                GROUP BY p.id_platillo
+                ORDER BY RAND()
+                LIMIT $limit
+            ";
+
             $datos = $this->db->query($sql);
+
+            if(!$datos){
+                echo "Error SQL: " . $this->db->error;
+            }
+
             if($datos && $datos->num_rows > 0)
-                $result = $datos;
-            return $result;
+                return $datos;
+
+            return false;
         }
     }
-
 ?>
