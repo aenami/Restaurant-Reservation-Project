@@ -9,7 +9,7 @@
 <?php while($dato = $platillos->fetch_object()):?>
     <div class="menu-platillo">
         <div class="menu-platillo-conjunto">
-            <img src="assets/imagenes/menu/platillos/<?=$dato->ruta_imagen ?>" alt="platillo1"
+            <img src="<?=base_url?>assets/imagenes/menu/platillos/<?=$dato->ruta_imagen ?>" alt="platillo1"
                 class="platillo-img">
             <div class="menu-platillo-info">
                 <span class="platillo-title"><?=$dato->nombre_platillo?></span>

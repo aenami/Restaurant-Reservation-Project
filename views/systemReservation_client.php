@@ -1,3 +1,6 @@
+<?php
+    require_once 'config/parameters.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,8 +8,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cava & Corte | Reservation System</title>
-    <link rel="stylesheet" href="assets/css/estilosReservationPage.css">
-    <script src="assets/javascript/systemReservation.js"></script>
+    <link rel="stylesheet" href="<?=base_url?>assets/css/estilosReservationPage.css">
+    <script src="<?=base_url?>assets/javascript/systemReservation.js"></script>
 </head>
 
 <body>
@@ -17,21 +20,21 @@
 
             <div class="navbar-points">
                 <button class="btn" onclick="showSection('reservation-section')">
-                    <img src="assets/imagenes/SystemPage/Reservacion.png" alt="Icono reservas" class="btn-icon">
+                    <img src="<?=base_url?>assets/imagenes/SystemPage/Reservacion.png" alt="Icono reservas" class="btn-icon">
                     <span>Reservacion</span>
                 </button>
                 <button class="btn" onclick="showSection('menu-section')">
-                    <img src="assets/imagenes/SystemPage/Menu.png" alt="Icono reservas" class="btn-icon">
+                    <img src="<?=base_url?>assets/imagenes/SystemPage/Menu.png" alt="Icono reservas" class="btn-icon">
                     <span>Menu</span>
                 </button>
                 <button class="btn" onclick="showSection('history-section')">
-                    <img src="assets/imagenes/SystemPage/Historial.png" alt="Icono reservas" class="btn-icon">
+                    <img src="<?=base_url?>assets/imagenes/SystemPage/Historial.png" alt="Icono reservas" class="btn-icon">
                     <span>Historial</span>
                 </button>
             </div>
 
             <div class="navbar-userInfo">
-                <img src="assets/imagenes/SystemPage/perfil.jpg" alt="Foto de perfil del usuario">
+                <img src="<?=base_url?>assets/imagenes/SystemPage/perfil.jpg" alt="Foto de perfil del usuario">
                 <span>User name</span>
             </div>
         </nav>
@@ -42,19 +45,19 @@
                     <span>Sumergete en deliciosos <br>platillos de comida</span>
                     <div class="slider">
                         <div class="slider-track">
-                            <img src="assets/imagenes/menu/Carrousel/Waffles.jpg" alt="img1" class="img1">
-                            <img src="assets/imagenes/menu/Carrousel/Ancheta.jpg" alt="img2" class="img2">
-                            <img src="assets/imagenes/menu/Carrousel/Curry.jpg" alt="img3" class="img3">
-                            <img src="assets/imagenes/menu/Carrousel/Ensalada.jpg" alt="img4" class="img4">
-                            <img src="assets/imagenes/menu/Carrousel/Pizza.jpg" alt="img5" class="img5">
-                            <img src="assets/imagenes/menu/Carrousel/Sopita.jpg" alt="img6" class="img6">
+                            <img src="<?=base_url?>assets/imagenes/menu/Carrousel/Waffles.jpg" alt="img1" class="img1">
+                            <img src="<?=base_url?>assets/imagenes/menu/Carrousel/Ancheta.jpg" alt="img2" class="img2">
+                            <img src="<?=base_url?>assets/imagenes/menu/Carrousel/Curry.jpg" alt="img3" class="img3">
+                            <img src="<?=base_url?>assets/imagenes/menu/Carrousel/Ensalada.jpg" alt="img4" class="img4">
+                            <img src="<?=base_url?>assets/imagenes/menu/Carrousel/Pizza.jpg" alt="img5" class="img5">
+                            <img src="<?=base_url?>assets/imagenes/menu/Carrousel/Sopita.jpg" alt="img6" class="img6">
                             <!-- duplicamos las imágenes para lograr el bucle suave -->
-                            <img src="assets/imagenes/menu/Carrousel/Waffles.jpg" alt="img1" class="img1">
-                            <img src="assets/imagenes/menu/Carrousel/Ancheta.jpg" alt="img2" class="img2">
-                            <img src="assets/imagenes/menu/Carrousel/Curry.jpg" alt="img3" class="img3">
-                            <img src="assets/imagenes/menu/Carrousel/Ensalada.jpg" alt="img4" class="img4">
-                            <img src="assets/imagenes/menu/Carrousel/Pizza.jpg" alt="img5" class="img5">
-                            <img src="assets/imagenes/menu/Carrousel/Sopita.jpg" alt="img6" class="img6">
+                            <img src="<?=base_url?>assets/imagenes/menu/Carrousel/Waffles.jpg" alt="img1" class="img1">
+                            <img src="<?=base_url?>assets/imagenes/menu/Carrousel/Ancheta.jpg" alt="img2" class="img2">
+                            <img src="<?=base_url?>assets/imagenes/menu/Carrousel/Curry.jpg" alt="img3" class="img3">
+                            <img src="<?=base_url?>assets/imagenes/menu/Carrousel/Ensalada.jpg" alt="img4" class="img4">
+                            <img src="<?=base_url?>assets/imagenes/menu/Carrousel/Pizza.jpg" alt="img5" class="img5">
+                            <img src="<?=base_url?>assets/imagenes/menu/Carrousel/Sopita.jpg" alt="img6" class="img6">
                         </div>
                     </div>
                 </div>
@@ -108,7 +111,7 @@
                                 <span class="fSaucer">Pollo apanado</span>
                             </div>
                            <button>
-                                <img src="assets/imagenes/historial/delete_14337750.png" alt="img cancelar" class="img-cancelar">
+                                <img src="<?=base_url?>assets/imagenes/historial/delete_14337750.png" alt="img cancelar" class="img-cancelar">
                                 Cancel reservation
                            </button>
                         </div>
@@ -126,7 +129,7 @@
                                 <span>Pollo apanado</span>
                             </div>
                            <button>
-                                <img src="assets/imagenes/historial/delete_14337750.png" alt="img cancelar" class="img-cancelar">
+                                <img src="<?=base_url?>assets/imagenes/historial/delete_14337750.png" alt="img cancelar" class="img-cancelar">
                                 Cancel reservation
                            </button>
                         </div>
@@ -158,20 +161,20 @@
                         <label for="listaPlatillos">Entrada</label>
                         <select name="listaPlatillos" id="">
                             <option value="#" class="listaOpcion" selected>Selecciona un platillo</option>
-                            <option value="#" class="listaOpcion">Pollo apanado</option>
-                            <option value="#" class="listaOpcion">Ensalada vegana</option>
-                            <option value="#" class="listaOpcion">Choco crispis</option>
-                            <option value="#" class="listaOpcion">Zucaritas</option>
-                            <option value="#" class="listaOpcion">Caviar</option>
+                            <?php
+                                $categoria = "2";
+                                include 'backend/entradas.php';
+                            ?>
                         </select>
                     </div>
                     <div class="formSection">
                         <label for="listaMesas">Mesa</label>
                         <select name="listaMesas" id="">
                             <option value="#" selected>Selecciona una mesa</option>
-                            <option value="#" class="listaOpcion">Mesa 1 - (2 personas)</option>
-                            <option value="#" class="listaOpcion">Mesa 2 - (3 personas)</option>
-                            <option value="#" class="listaOpcion">Mesa 3 - (4 personas)</option>
+                            <?php
+                                $categoria = "2";
+                                include 'backend/entradas.php';
+                            ?>
                             <option value="#" class="listaOpcion">Mesa 4 - (6 personas)</option>
                         </select>
                     </div>

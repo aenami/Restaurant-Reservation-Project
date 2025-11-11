@@ -1,58 +1,84 @@
 <?php
-    require_once 'config/conexion.php';
+    require_once '../config/conexion.php';
 
-    class Usuario{
+    class Usuario {
         private $db;
 
         public function __construct(){
             $this->db = Connection::connect();
         }
 
+        /** REGISTRO */
         public function registrar(){
-            $result = false;
-            if(isset($_POST)){
-                $nombre = $_POST['name'];
-                $email = $_POST['email'];
-                $phone = $_POST['phone'];
-                $ID = $_POST['cedula'];
-                $password = $_POST['password'];
-                try{
-                    // Intento de conexion a la base de datos
-                    $sql = "INSERT INTO clientes VALUES('{$id}', '{$email}', '{$phone}', '{$ID}', '{$password}', 2)";
-                    $result = $sql;
-                }catch (Exception $er){
-                    echo 'Error en la conexion a la base de datos...';
-                }
+
+            $nombre   = $_POST['name'] ?? null;
+            $email    = $_POST['email'] ?? null;
+            $phone    = $_POST['phone'] ?? null;
+            $ID       = $_POST['cedula'] ?? null;  
+            $password = $_POST['password'] ?? null;
+
+            if(!$nombre || !$email || !$phone || !$ID || !$password){
+                echo "Falta información";
+                return false;
             }
-            return $result;
+
+            $hash = password_hash($password, PASSWORD_DEFAULT);
+
+            try{
+                $sql = "INSERT INTO clientes
+                (nombre_cliente, email_cliente, telefono_cliente, cedula_cliente, contraseña_cliente, id_rol_cliente)
+                VALUES (?, ?, ?, ?, ?, 2)";
+
+                $stmt = $this->db->prepare($sql);
+                $stmt->bind_param("sssss", $nombre, $email, $phone, $ID, $hash);
+
+                if(!$stmt->execute()){
+                    echo "Error MySQL → " . $this->db->error;
+                    return false;
+                }
+
+                return true;
+
+            } catch (Exception $er){
+                echo "Excepción → " . $er->getMessage();
+                return false;
+            }
         }
 
-        public function login(){
-            $result =  false;
-            if(isset($_POST)){
-                $id = $_POST('email')
-                $clave = $_POST('password')
-                try{
-                    //Recuperando info de la bd para verificar el logeo
-                    $sql = "SELECT email_cliente, contraseña_cliente FROM clientes WHERE cedula_cliente ='{$id}' &&  ";
+    // LOGEOO
+    public function login() {
+        if ($_SERVER['REQUEST_METHOD'] !== 'POST') return false;
 
-                    // Realizando la instruccion por medio de la variable que se conecto a la bd
-                    $data = $this->db->query($sql);
-                    if($data && $data->num_rows == 1){
-                        $datos = $data->fetch_object(); // Convierto el registro en un objeto
-                        // Verificando que el usuario haya ingresado la clave correcta
-                        if($datos->contraseña_cliente == $clave){
-                            $result = $datos;
-                            $_SESSION['user'] = $datos->nombre_cliente
-                        }
-                    }
+        $cedula = $_POST['cedula'] ?? null;
+        $clave  = $_POST['password'] ?? null;
 
-                
-                }catch(Exception $er){
-                    return $er->getMessage();
-                }
+        if (!$cedula || !$clave) return false;
+
+        try{
+            $sql = "SELECT * FROM clientes WHERE cedula_cliente = ?";
+            $stmt = $this->db->prepare($sql);
+            $stmt->bind_param("s", $cedula);
+            $stmt->execute();
+
+            $resultado = $stmt->get_result();
+
+            if(!$resultado || $resultado->num_rows === 0){
+                return "no-encontrado";
             }
-            return $result;
+
+            $datos = $resultado->fetch_object();
+
+            if(!password_verify($clave, $datos->contraseña_cliente)){
+                return "incorrecto";
+            }
+
+            $_SESSION['user'] = $datos;
+            return true;
+
+        }catch(Exception $er){
+            return false;
         }
+
+        return false;
     }
-?>
+}

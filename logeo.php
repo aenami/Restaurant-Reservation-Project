@@ -1,7 +1,9 @@
 <?php
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
     require_once 'config/parameters.php';
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -26,21 +28,27 @@
         </div>
 
 
-        <form action="" class="loginForm">
+        <form action="backend/loginuser.php" class="loginForm" method="POST" name="loginForm">
             <div class="form-section">
-                <label for="">Email</label>
-                <input type="text" placeholder="usuario@cuenta.com">
+                <label for="inputCedula">Cedula</label>
+                <input type="text" name="cedula" id="inputCedula" placeholder="usuario@cuenta.com" require>
             </div>
             <div class="form-section">
-                <label for="">Password</label>
-                <input type="text" placeholder="******">
+                <label for="inputPassword">Password</label>
+                <input type="text" name="password" id="inputPassword" placeholder="******" require>
             </div>
             <div class="form-remindPassword">
                 <span><a href="#" class="linkNewPassword">Olvidates tu contraseña?</a></span>
             </div>
-            <input type="button" value="Continuar" class="btn">
+            <input type="submit" value="Continuar" class="btn">
+            <?php if(isset($_SESSION['mensaje'])): ?>
+                <div class="alert <?= $_SESSION['mensaje']['tipo'] ?>">
+                    <?= $_SESSION['mensaje']['texto'] ?>
+                </div>
+                <?php unset($_SESSION['mensaje']); ?>
+            <?php endif; ?>
             <span>━━━━ or ━━━━</span>
-            <span>Eres nuevo? <a href="<?=base_url?>">Create una cuenta</a></span>
+            <span>Eres nuevo? <a href="<?=base_url?>/register.php">Create una cuenta</a></span>
         </form>
 
     </main>

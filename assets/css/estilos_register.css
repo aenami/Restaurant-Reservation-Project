@@ -31,14 +31,13 @@ body {
 
 .left-container {
     display: grid;
-    grid-template-rows: 95vh 5vh;
+    grid-template-rows: 95% 5%;
 }
 
 /*----------------Estilos referentes al formulario----------------*/
 .form {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     padding: 7%;
     gap: 20px;
@@ -97,6 +96,12 @@ body {
     box-shadow: 0 0 5px #4f8ef755; 
 }
 
+.spanError {
+    color: rgb(224, 54, 54);
+    font-size: 12.5px;
+}
+
+
 .input-button {
     width: 100%;
     padding: 14px;
@@ -143,6 +148,9 @@ body {
 
 
 .right_container_img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 70%;
     height: 100%;
     overflow: hidden;
@@ -165,6 +173,22 @@ body {
     height: auto;
 }
 
+/*-------------Css referente a los errores provenientes del backend-----------------*/
+.alert {
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    font-weight: 500;
+}
 
+.alert.success {
+    background: #c1f7c4;
+    color: #145a1f;
+}
+
+.alert.error {
+    background: #000000;
+    color: #d4af37;
+}
 
 
