@@ -1,6 +1,6 @@
 <?php
-    require_once 'config/parameters.php';
-    require_once 'backend/platillos.php';
+    require_once __DIR__ . '/../config/parameters.php';
+    require_once __DIR__ . '/../backend/platillos.php';
     $platillo = new Platillo();
     $platillos = $platillo->getPlatillos($categoria ?? null);
 ?>

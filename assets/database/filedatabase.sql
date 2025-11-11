@@ -20,11 +20,17 @@ INSERT INTO clientes VALUES
 ('1080923', 'David Diaz', 'david@gmail.com','3028763233', 'Davidsapo', 1);
 
 INSERT INTO platillos VALUES
-(null, 'fideos napolitanos', 'Fideos al estilo napolitano', 22500, 1),
-(null, 'Carne wagyu', 'Carne premiun wagyu', 45000, 3),
-(null, 'coca cola', 'Bebida fria cocacola', 4000, 2);
+(null, 'Espagueti con salmón y verduras', 'Espagueti, Salmón, Tomates cherry, Brócoli, Hojas verdes, Salsa verde', 22500, 1),
+(null, 'Espagueti con salsa de tomate', 'Espagueti, Salsa de tomate, Cebolla, Especias, Lechuga, Rodaja de tomate', 45000, 3),
+(null, 'Pasta con pollo', 'Pasta penne, Trozos de pollo, Queso parmesano, Tomate cherry, Ajo', 40000, 2),
+(null, 'Spaghetti Frutti di Mare', 'Spaghetti, Camarones, Almejas, Tomate cherry', 56000, 2),
+(null, 'Carne a la parrilla', 'corte de res ribeye, Salsa gravy, Papas fritas gruesas, Zanahoria salteada, broccolini salteado', 76000, 1),
+(null, 'Pollo asado al carbon', 'Pollo, Sal, Condimentos, Fuego', 67300, 3);
 
 INSERT INTO imagenes_platillo VALUES
 ('platillo1.jpg', 1),
 ('platillo2.jpg', 2),
-('platillo3.jpg', 3);
+('platillo3.jpg', 3),
+('platillo4.jpg', 4),
+('platillo6.jpg', 5),
+('platillo6.jpg', 6);

@@ -1,5 +1,5 @@
 <?php
-    require_once 'config/parameters.php';
+    require_once __DIR__ . '/../config/parameters.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
