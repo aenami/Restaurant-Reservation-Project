@@ -20,8 +20,8 @@ const login = async (req, res) =>{
 
         // Verificamos respuesta de la db
         if(result){
-            // Redirigimos al usuario
-            res.render('mainPage.ejs')
+            // Redirigiendo
+            res.redirect('/homePage')
         }else{
             console.log('Contraseña mal')
             // Renderizamos el mensaje de error

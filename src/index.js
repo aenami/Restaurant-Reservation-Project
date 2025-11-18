@@ -5,7 +5,6 @@ const path = require('path')
 const app = express() 
 
 // Importamos rutas
-const mainRoutes = require('./routes/mainRoutes')
 const registerRoutes = require('./routes/Register.router')
 const loginRoutes = require('./routes/login.router')
 const mainPageRoutes = require('./routes/mainRoutes')
@@ -22,23 +21,15 @@ app.set('view-engine', 'ejs') // Definiendo el motor de plantillas que estaremos
 app.set('views', path.join(__dirname, './views')) // Definiendo la ruta que utilizaremos en las vitas
 
 
-
 // ------Middlewares--------
 app.use(express.json()) // Convierte las respuestas a json
 app.use(express.urlencoded({extended: false}))
 
 
 // ------Rutas----------
-app.use(mainRoutes)
-
 app.use("/register", registerRoutes) // RUTA REGISTER
 app.use("/login", loginRoutes) // RUTA LOGIN
 app.use("/homePage", mainPageRoutes) // Rutas de la pagina principal
-
-app.get('/', (req, res) =>{
-    app.send('Hola chaval')
-})
-
 
 // ------ Logica que queremos ejecutar luego de que la peticion
 // haya pasado por los middlewares y rutas comunes -------------

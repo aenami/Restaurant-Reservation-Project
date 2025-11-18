@@ -28,12 +28,12 @@
             </div>
             <div class="form_group" id="formPhoneDiv">
                 <label for="inputPhone"class="form_group_label">Telefono:</label>
-                <input type="number" name="phone" maxlength="15" placeholder="3147338067" class="input-text"
+                <input type="number" name="phone" maxlength="10" placeholder="3147338067" class="input-text"
                 required id="inputPhone">
             </div>
             <div class="form_group" id="formIdDiv">
                 <label for="inputID" class="form_group_label">Cedula:</label>
-                <input type="number" name="cedula" maxlength="15" placeholder="1059265538" class="input-text"
+                <input type="number" name="cedula" maxlength="10" placeholder="1059265538" class="input-text"
                 required id="inputId">
             </div>
             <div class="form_group" id="formPasswordDiv">
@@ -60,7 +60,7 @@
                 <!-- Funcion que redirige al login -->
                 <script>
                     setTimeout(() => {
-                        window.location.href = "/login.ejs";
+                        window.location.href = "/login";
                     }, 3000);
                 </script>
             <% } %>
