@@ -62,7 +62,9 @@
                 <div class="typeMenu">
                     <span class="typeMenu-title">Desayuno menú especial</span>
                     <div class="menu">                   
-                        <%- include('./partials/menu.ejs', { items: breakfast }) %>
+                        <%- include('../views/partials/menu.ejs', { 
+                            items: breakfast
+                        }) %>
                     </div>
                 </div>
 
@@ -70,6 +72,9 @@
                     <span class="typeMenu-title">Almuerzo menú especial</span>
                     <div class="menu">
                         <!-- Traer los platillos que tienen el tipo_platillo como "Almuerzo" -->
+                         <%- include('../views/partials/menu.ejs', { 
+                            items: lunch
+                        }) %>
                     </div>
                 </div>
 
@@ -77,7 +82,9 @@
                     <span class="typeMenu-title">Cena menú especial</span>
                     <div class="menu">
                          <!-- Traer los platillos que tienen el tipo_platillo como "Cena" -->
-
+                         <%- include('../views/partials/menu.ejs', { 
+                            items: dinner
+                        }) %>
                     </div>
                 </div>
             </section>
@@ -150,20 +157,23 @@
                         <label for="listaPlatillos">Entrada</label>
                         <select name="listaPlatillos" id="">
                             <option value="#" class="listaOpcion" selected>Selecciona un platillo</option>
-                            <?php
-                                $categoria = "2";
-                                include 'backend/entradas.php';
-                            ?>
+
+
+
+
+
                         </select>
                     </div>
                     <div class="formSection">
                         <label for="listaMesas">Mesa</label>
                         <select name="listaMesas" id="">
                             <option value="#" selected>Selecciona una mesa</option>
-                            <?php
-                                $categoria = "2";
-                                include 'backend/entradas.php';
-                            ?>
+
+
+
+
+
+                            
                             <option value="#" class="listaOpcion">Mesa 4 - (6 personas)</option>
                         </select>
                     </div>

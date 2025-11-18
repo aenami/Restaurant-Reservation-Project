@@ -1,23 +1,29 @@
-<!-- Esquema para mostrar los platillos en los menus -->
+<!-- Partial del esquema para mostrar los platillos en los menus -->
 
 <% if (items && items.length > 0) { %>
     <% items.forEach(platillo => { %>
         <div class="menu-platillo">
             <div class="menu-platillo-conjunto">
-                <!-- Traer las rutas de cada imagen -->
-                <img src="../../public/imgs/menu/platillos/ ?>" alt="platillo1"
-                    lass="platillo-img">
+
+                <!-- Imagen del platillo -->
+                <img src="/public/imgs/menu/platillos/<%= platillo.ruta_imagen %>" 
+                     alt="<%= platillo.nombre_platillo %>"
+                     class="platillo-img">
+
                 <div class="menu-platillo-info">
-                    <!-- Traer el nombre del platillo -->
-                    <span class="platillo-title">      </span>
-                    <!-- Traer los ingredientes del platillo --> 
-                    <span class="platillo-ingredients"> </span>
+                    <!-- Nombre del platillo -->
+                    <span class="platillo-title"><%= platillo.nombre_platillo %></span>
+
+                    <!-- Ingredientes / descripción -->
+                    <span class="platillo-ingredients"><%= platillo.descripcion_platillo %></span>
                 </div>
             </div>
-            <!-- Traer El precio  del platillo --> 
-            <span class="platillo-precio">     </span>
+
+            <!-- Precio -->
+            <span class="platillo-precio">$<%= platillo.precio_platillo %></span>
         </div>
     <% }) %>
 <% } else { %>
     <p class="no-items">No hay platillos disponibles.</p>
 <% } %>
+
