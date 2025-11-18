@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro | Cava & Corte</title>
+    <link rel="stylesheet" href="../public/css/estilos_register.css">
+</head>
+
+<body>
+    <section class="left-container">
+        <!-- Hacemos un request a esta misma url pero usando el metodo POST -->
+        <form action="./register" name="register_form" method="post" class="form">
+            <div class="form-title">
+                <h1>Crea una cuenta</h1>
+                <span>Crea una cuenta y disfruta de beneficios exclusivos!</span>
+            </div>
+            <div class="form_group" id="formNameDiv">
+                <label for="inputName" class="form_group_label">Nombres:</label>
+                <input type="text" name="name" maxlength="30" placeholder="Julian Andres" 
+                class="input-text" id="inputName" required>
+            </div>
+            <div class="form_group" id="formEmailDiv">
+                <label for="inputEmail" class="form_group_label">Email:</label>
+                <input type="email" name="email" maxlength="50" placeholder="juliancastaneda@gmail.com" 
+                class="input-text" id="inputEmail" required>
+            </div>
+            <div class="form_group" id="formPhoneDiv">
+                <label for="inputPhone"class="form_group_label">Telefono:</label>
+                <input type="number" name="phone" maxlength="15" placeholder="3147338067" class="input-text"
+                required id="inputPhone">
+            </div>
+            <div class="form_group" id="formIdDiv">
+                <label for="inputID" class="form_group_label">Cedula:</label>
+                <input type="number" name="cedula" maxlength="15" placeholder="1059265538" class="input-text"
+                required id="inputId">
+            </div>
+            <div class="form_group" id="formPasswordDiv">
+                <label for="inputPassword" class="form_group_label">Contraseña:</label>
+                <input type="password" name="password" maxlength="40" placeholder="******" class="input-text" 
+                required id="inputPassword">
+            </div>
+            <div class="form_group">
+                <input type="submit" value="Crear cuenta" class="input-button" id="buttonSubmit">
+            </div>
+        </form>
+        <div class="left-container-bottom">
+            <!-- ARREGLAR REDIRIGIMIENTO -->
+            <span>¿Ya tienes una cuenta? <a href="./login">Inicia sesion aqui</a></span>
+        </div>
+    </section>
+
+    <section class="right_container">
+        <div class="right_container_logo">
+            <!-- Verifica si el mensaje existe y es de tipo success -->
+            <% if (message && type === 'success') { %>
+                <div class="alert success"><%= message %></div>
+
+                <!-- Funcion que redirige al login -->
+                <script>
+                    setTimeout(() => {
+                        window.location.href = "/login.ejs";
+                    }, 3000);
+                </script>
+            <% } %>
+            
+            <!-- Verifica que el mensaje exista y sea de tipo error -->
+            <% if (message && type === 'error') { %>
+                <div class="alert error"><%= message %></div>
+            <% } %>
+        </div>
+        <div class="right_container_img">
+            <img src="../public/imgs/register/restaurante2.jpg" alt="Imagen restaurante">
+        </div>
+    </section>
+<script src="../public/js/register.js"></script>
+</body>
+</html>

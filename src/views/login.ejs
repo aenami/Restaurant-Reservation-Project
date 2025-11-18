@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Cava & Corte</title>
+    <link rel="stylesheet" href="../public/css/estilos_login.css">
+</head>
+
+<body>
+    <main class="main">
+        <div class="textInfo">
+            <img src="../public/imgs/Imagen_Logo.png" alt="Logo Cava & Corte">
+            <div class="textInfo-titulo">
+                <h1>Cava & Corte</h1>
+                <h2>| Login</h2>
+            </div>
+            <span class="span1">Donde tus cenas se convierten tambien en una experiencia.</span>
+            <span class="span2">Logeate y reserva un espacio!</span>
+        </div>
+
+        <form action="./login" class="loginForm" method="POST" name="loginForm">
+            <div class="form-section">
+                <label for="inputCedula">Cedula</label>
+                <input type="text" name="cedula" id="inputCedula" placeholder="105923855" require>
+            </div>
+            <div class="form-section">
+                <label for="inputPassword">Password</label>
+                <input type="text" name="password" id="inputPassword" placeholder="******" require>
+            </div>
+            <div class="form-remindPassword">
+                <span><a href="#" class="linkNewPassword">Olvidates tu contraseña?</a></span>
+            </div>
+            <input type="submit" value="Continuar" class="btn">
+            <% if(message){%>
+                <div>
+                    <%= message %>
+                </div>
+            <% } %>
+            <span>━━━━ or ━━━━</span>
+            <span>Eres nuevo? <a href="./register">Create una cuenta</a></span>
+        </form>
+
+    </main>
+</body>
+
+</html>

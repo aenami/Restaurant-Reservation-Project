@@ -1,0 +1,138 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+
+}
+
+.main {
+    background-image: url(../imgs/login/restauranteFondo3.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+    height: 100vh;
+    gap: 15%;
+}
+
+/*--------------Parte referente al contenedor izquierdo----------*/
+.textInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    color: white;
+    width: 50%;
+    max-width: 700px;
+    gap: 10px;
+    padding: 3%;
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2); 
+}
+
+.textInfo img {
+    width: 30%;
+    height: auto;
+}
+
+.textInfo-titulo {
+    display: flex;
+}
+
+.textInfo-titulo h1 {
+    font-size: 50px;
+    color: #fcd772;
+}
+
+.textInfo-titulo h2 {
+    font-size: 50px;
+    color: #dddad4;
+}
+
+.span1 {
+    font-size: 25px;
+    color: #dddad4;
+}
+
+.span2 {
+    font-size: 17px;
+    color: #dddad4;
+}
+
+/*--------------Parte referente al contenedor derecho-----------*/
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    gap: 15px;
+    padding: 3%;
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.form-section {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    width: 100%;
+}
+
+.form-section label {
+    color: white;
+}
+
+.form-section input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #555;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.6);
+    font-size: 14px;
+    outline: none;
+    transition: border 0.3s;
+    font-size: 14px;
+    background-color: white;
+}
+
+.btn {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(90deg, #d4af37, #f5d76e);
+    border: none;
+    border-radius: 8px;
+    font-weight: normal;
+    color: #000;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #d4af37;
+}
+
+.linkNewPassword, .loginForm span, .loginForm span a{
+    color: #dddad4;
+}
+
+
+

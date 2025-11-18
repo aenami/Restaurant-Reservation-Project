@@ -1,0 +1,514 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-color: #282726;
+}
+
+/*--------------Barra de navegacion-------------*/
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 10%;
+    -webkit-box-shadow: 0px 5px 32px 0px rgba(0,0,0,0.95); 
+    box-shadow: 0px 5px 32px 0px rgba(0,0,0,0.95);
+    background-color: #0d3a4a;
+}
+
+.navbar-logo {
+    background-image: url(../imgs/Imagen_Logo.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 10%;
+}
+
+
+.navbar-points {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 30%;
+    gap: 20px;
+}
+
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 16px;     
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn span {
+    text-align: center;
+    overflow-wrap: break-word; 
+}
+
+.btn:hover {
+  background-color: #75d0fa;
+}
+
+.btn-icon {
+    width: 30px;
+    height: 30px;
+}
+
+
+.navbar-userInfo {
+    display: flex;
+    align-items: center;
+    padding: 10px 5px;
+    gap: 15px;
+    border-radius: 10px;
+    background-color: white;
+    margin-right: 2%;
+}
+
+.navbar-userInfo img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+/*------------Css referente al carrousel infinito y titulo---------*/
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 90vh;
+    padding-top: 2%;
+    gap: 15px;
+    background-color: #282726;
+}
+
+.hero span {
+    font-size: 70px;
+    color: #d4af37;
+}
+
+@media (max-width: 680px){
+    .hero span {
+        font-size: 50px;
+    }
+}
+
+.slider {
+    overflow: hidden;         /* Oculta las imágenes que se salen */
+    width: 100%;            
+}
+
+.slider-track { 
+    display: flex;
+    align-items: center;
+    animation: scroll 20s linear infinite; /* Movimiento continuo */
+}
+
+.slider-track img {
+    margin-right: 10px;
+    border-radius: 10px;   
+    border-style: solid;
+    border-color: #dddad4;
+}
+
+.img1 {
+    height: 300px;
+    width: auto;
+}
+
+.img2 {
+    height: 260px;
+    width: auto;
+}
+
+.img3 {
+    height: 310px;
+    width: auto;
+}
+
+.img4 {
+    height: 250px;
+    width: auto;
+}
+
+.img5 {
+    height: 320px;
+    width: auto;
+}
+
+.img6 {
+    height: 240px;
+    width: auto;
+}
+
+.img7 {
+    height: 300px;
+    width: auto;
+}
+
+/* Animación */
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* Se mueve hasta la mitad del track duplicado */
+}
+
+/*---------Css referente a el cambio de secciones----------*/
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
+    animation: aparecer 0.4s ease;
+}
+
+@keyframes aparecer {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/*-------------Css referente a la seccion del menu-------------*/
+#menu-section {
+    /* dejar vacío: el layout se aplica sólo cuando está .active o .leaving */
+}
+
+#menu-section.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+/* garantizar que las secciones en salida permanezcan visibles para la animación */
+.section.leaving {
+    display: block; /* se muestra durante la animación */
+    animation: desaparecer 0.35s ease forwards;
+}
+
+/* si es específicamente el menú, mantener el layout flex mientras sale */
+#menu-section.leaving {
+    display: flex;
+}
+
+/* animación de desaparición */
+@keyframes desaparecer {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+/* cuando el menú está activo necesita layout flex */
+#menu-section.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+/*-------------Css referente a la seccion del menu-------------*/
+.typeMenu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    max-width: 80%;
+    padding: 20px 20px;
+    border-radius: 10px;
+}
+
+.typeMenu-title {
+    font-size: 35px;
+    color: #dddad4;
+    text-align: center;
+}
+
+
+.menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+@media (max-width: 600px) {
+  .menu {
+    grid-template-columns: 1fr; 
+  }
+}
+
+.menu-platillo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3%;
+    gap: 30px;
+    overflow-wrap: break-word; /* Para que el texto no se haga muy largo y se desborde*/
+    /* From https://css.glass */
+    background: #dddad4;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(252, 215, 114, 0.3);
+}
+
+/*El ancho de este contenedor debe poder variar y por lo tanto no le puedo definir el width*/
+.menu-platillo-conjunto {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.platillo-img {
+    width: 30%;
+    min-width: 80px;
+    height: 30%;
+    border-radius: 7px;
+}
+
+.menu-platillo-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.platillo-title {
+    font-size: 25px;
+}
+
+.platillo-precio {
+    font-size: 20px;
+}
+
+/*-----------Css referente a la seccion del historial-------------*/
+#history-section {
+    padding: 3%;
+}
+
+.reservations {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+}
+
+.futureReservations {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.futureReservation, .pastReservation {
+    display: flex;
+    flex-direction: row;
+    gap: 5%;
+    padding: 10px;
+    background-color: white;
+    max-width: 800px;
+    border-radius: 4px;
+}
+
+.futureReservations-title, .pastReservations-title {
+    font-size: 30px;
+    color: #d4af37;
+}
+
+.reservationDate, .tableReserved, .saucer {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    gap: 7px;
+}
+
+.reservationDate {
+    border-radius: 5px;
+    background-color: #eceef9;
+}
+
+.futureReservation button, .pastReservation button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 16px;     
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.tableReserved span:first-child, .saucer span:first-child {
+    font-size: 18px;
+}
+
+.fSaucer, .NTable {
+    color: #6a6966;
+}
+
+.img-cancelar {
+    width: 25px;
+    height: 25px;
+}
+
+/*-------Css referente a la seccion de las reservas--------*/
+#reservation-section {
+    /* quitar el display fijo */
+    position: relative;
+    height: 92vh;
+    width: 100%;
+    background-image: url(../imagenes/reserva/fondoRestaurante2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#reservation-section.active {
+    display: flex !important; /* Para asegurar que override otros estilos */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Asegurar que .section.leaving tiene mayor especificidad */
+.main-section .section.leaving {
+    display: block !important;
+    animation: desaparecer 0.35s ease forwards;
+}
+
+/* Si es la sección de reservas, mantener el flex mientras sale */
+.main-section #reservation-section.leaving {
+    display: flex !important;
+}
+
+#reservation-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+/* Aseguramos que el texto quede encima */
+#reservation-section > * {
+  position: relative;
+  z-index: 2;
+}
+
+.reservationForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: rgba(13, 13, 13, 0.9);
+    padding: 40px;
+    border-radius: 15px;
+    border: 1px solid #d4af37;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+    animation: fadeIn 1s ease;
+}
+
+@media (min-width: 950px) {
+  .reservationForm {
+    width: 25%;
+  }
+}
+
+.formSection {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    color: white;
+}
+
+.formSection label{
+    font-size: 14px;
+}
+
+.formSection input {
+    padding: 12px;
+    border: 1px solid #555;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    font-size: 14px;
+    outline: none;
+    transition: border 0.3s;
+}
+
+.formSection input:focus {
+    border: 1px solid #d4af37;
+    box-shadow: 0 0 6px #d4af37;
+}
+
+#btnSubmit {
+    padding: 14px;
+    background: linear-gradient(90deg, #d4af37, #f5d76e);
+    border: none;
+    border-radius: 8px;
+    font-weight: lighter;
+    color: #000;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#btnSubmit:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #d4af37;
+}
+
+#hora::-webkit-calendar-picker-indicator {
+  filter: invert(45%) sepia(80%) saturate(500%) hue-rotate(200deg);
+}
+
+#fecha::-webkit-calendar-picker-indicator {
+  filter: invert(45%) sepia(80%) saturate(500%) hue-rotate(200deg);
+}
+
+/* Animación */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+/* ==== Estilos para el select ==== */
+.formSection select {
+  padding: 12px;
+  border: 1px solid #555;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  transition: border 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.formSection select:focus {
+  border: 1px solid #d4af37;
+  box-shadow: 0 0 6px #d4af37;
+}
+
+.formSection option {
+  background: #1a1a1a;
+  color: #fdfdfd;
+  padding: 8px;
+}
+
