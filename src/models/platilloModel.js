@@ -1,19 +1,17 @@
 const pool = require('./db')
 
-const Platillo = {
+const Producto = {
     //---Consultas a ejecutar de mi modelo
     async getAll(){
+        // Funcion para que devuelva todos los platillos
         try {
-            const query = `
-                SELECT p.id_platillo, p.nombre_platillo, p.descripcion_platillo, 
-                    p.precio_platillo, t.tipo_platillo,
-                    i.ruta_imagen
-                FROM platillos p
-                INNER JOIN tipo_platillos t ON t.id_platillo_tipo = p.id_tipo_platillo
-                LEFT JOIN imagenes_platillo i ON i.id_platillo_imagen = p.id_platillo
-            `;
-
-            const [rows] = await pool.query(query);
+            const sql = `SELECT p.nombre_producto, p.descripcion_producto, p.precio_producto,
+            p.categoria_principal_producto, p.categoria_secundaria_producto,
+            i.ruta_imagen
+            FROM Producto p
+            INNER JOIN Imagen_producto i ON p.id_producto = id_producto_imagen;
+            `
+            const [rows] = await pool.query(sql);
             return rows;
         } catch (error) {
             console.log(`ERROR: ${error}`)
@@ -22,5 +20,5 @@ const Platillo = {
 }
 
 module.exports = {
-    Platillo
+    Producto
 }

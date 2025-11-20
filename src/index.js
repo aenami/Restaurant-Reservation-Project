@@ -31,6 +31,7 @@ app.use("/register", registerRoutes) // RUTA REGISTER
 app.use("/login", loginRoutes) // RUTA LOGIN
 app.use("/homePage", mainPageRoutes) // Rutas de la pagina principal
 
+
 // ------ Logica que queremos ejecutar luego de que la peticion
 // haya pasado por los middlewares y rutas comunes -------------
 app.use("/public", express.static(path.join(__dirname, 'public'))) // Especificamos la ruta que queremos que sea publica

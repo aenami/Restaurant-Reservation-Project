@@ -63,7 +63,7 @@
                     <span class="typeMenu-title">Desayuno menú especial</span>
                     <div class="menu">                   
                         <%- include('../views/partials/menu.ejs', { 
-                            items: breakfast
+                            products: breakfast
                         }) %>
                     </div>
                 </div>
@@ -73,7 +73,7 @@
                     <div class="menu">
                         <!-- Traer los platillos que tienen el tipo_platillo como "Almuerzo" -->
                          <%- include('../views/partials/menu.ejs', { 
-                            items: lunch
+                            products: lunch
                         }) %>
                     </div>
                 </div>
@@ -82,8 +82,8 @@
                     <span class="typeMenu-title">Cena menú especial</span>
                     <div class="menu">
                          <!-- Traer los platillos que tienen el tipo_platillo como "Cena" -->
-                         <%- include('../views/partials/menu.ejs', { 
-                            items: dinner
+                        <%- include('../views/partials/menu.ejs', { 
+                            products: dinner
                         }) %>
                     </div>
                 </div>

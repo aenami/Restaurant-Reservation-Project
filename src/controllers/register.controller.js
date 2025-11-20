@@ -13,13 +13,12 @@ const register = (req, res) =>{
 const submit = async (req, res) =>{
     try {
         // 1. Recibimos la informacion del formulario
-        const { name, email, phone, cedula, password } = req.body;
+        const { name, email, cedula, password } = req.body;
 
         // 2. Guardamos en la DB usando el modelo
         await Client.create({
             name,
             email,
-            phone,
             cedula,
             password
         })

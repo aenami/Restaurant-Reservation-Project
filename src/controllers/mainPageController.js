@@ -1,15 +1,16 @@
 // Importamos el modelo de platillos
-const { Platillo } = require('../models/platilloModel')
+const { Producto } = require('../models/platilloModel')
 
 const baseRender = async (req, res) =>{
     try {
-        const allDishes = await Platillo.getAll()
+        // Traemos todos los platilllos de la db
+        const allProducts = await Producto.getAll()
+        // Filtramos por categoria_principal_producto
+        const breakfast = allProducts.filter((p) => p.categoria_principal_producto === 'Breakfast')
+        const lunch = allProducts.filter(p => p.categoria_principal_producto === 'Lunch')
+        const dinner = allProducts.filter(p => p.categoria_principal_producto === 'Dinner')
 
-        // Filtrar por tipo_platillo
-        const breakfast = allDishes.filter(p => p.tipo_platillo === "Desayuno")
-        const lunch = allDishes.filter(p => p.tipo_platillo === "Almuerzo")
-        const dinner = allDishes.filter(p => p.tipo_platillo === "Cena")
-
+        // Le pasamos los productos a la vista y la renderizamos
         res.render('mainPage.ejs', {
             message: null,
             type: null,

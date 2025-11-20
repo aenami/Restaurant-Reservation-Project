@@ -13,14 +13,15 @@ const Cliente = {
     },
 
     // Insertar clientes en la db
-    async create({ name, email, phone, cedula, password}){
+    //------------------- VERIFICAR LA NUEVA VERSION QUE NO CREARA EL USUARIO DE UNA VEZ CON TELEFONO------
+    async create({ name, email, cedula, password}){
         try {
             // Consulta sql
-            const sql = `INSERT INTO clientes(cedula_cliente, nombre_cliente, email_cliente, telefono_cliente, contraseña_cliente, id_rol_cliente)
-            VALUES (?, ?, ?, ?, ?, ?);`
+            const sql = `INSERT INTO clientes(cedula_cliente, nombre_cliente, email_cliente, contraseña_cliente, id_rol_cliente)
+            VALUES (?, ?, ?, ?, ?);`
             
             // Valores a insertar
-            const values = [cedula, name, email, phone, password, 2]
+            const values = [cedula, name, email, password, 2]
 
             // Verificar si el usuario ya se encuentra registrado o no
             const sql_verify = `SELECT cedula_cliente FROM clientes c WHERE c.cedula_cliente = ?`
