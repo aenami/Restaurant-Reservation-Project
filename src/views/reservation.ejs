@@ -16,22 +16,22 @@
                 <label for="listaPlatillos">Entrada</label>
                 <select name="listaPlatillos" id="">
                     <option value="#" class="listaOpcion" selected>Selecciona un platillo</option>
-    
-    
-    
+                    <% if(products){%>
+                        <% products.forEach(entrada => { %>
+                            <option value="#" class="listaOpcion"> <%= entrada.nombre_producto %> </option>
+                        <% }); %>
+                    <% }%>
                 </select>
             </div>
             <div class="formSection">
                 <label for="listaMesas">Mesa</label>
                 <select name="listaMesas" id="">
                     <option value="#" selected>Selecciona una mesa</option>
-    
-    
-    
-    
-    
-    
-                    <option value="#" class="listaOpcion">Mesa 4 - (6 personas)</option>
+                    <% if(tables){%>
+                        <% tables.forEach(table =>{ %>
+                            <option value="#" class="listaOpcion"> Mesa <%= table.id_mesa%> - ( <%= table.tamaño_mesa %> personas) </option>
+                        <% }) %>
+                    <% }%>
                 </select>
             </div>
             <div class="formSection">
