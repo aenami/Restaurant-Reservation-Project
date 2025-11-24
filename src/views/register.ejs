@@ -19,61 +19,67 @@
             <div class="form_group" id="formNameDiv">
                 <label for="inputName" class="form_group_label">Nombres:</label>
                 <input type="text" name="name" maxlength="30" placeholder="Julian Andres" 
-                class="input-text" id="inputName" required>
+                class="input-text" id="inputName" required data-msg="Debes ingresar un nombre">
             </div>
             <div class="form_group" id="formEmailDiv">
                 <label for="inputEmail" class="form_group_label">Email:</label>
                 <input type="email" name="email" maxlength="50" placeholder="juliancastaneda@gmail.com" 
-                class="input-text" id="inputEmail" required>
-            </div>
-            <div class="form_group" id="formPhoneDiv">
-                <label for="inputPhone"class="form_group_label">Telefono:</label>
-                <input type="number" name="phone" maxlength="10" placeholder="3147338067" class="input-text"
-                required id="inputPhone">
+                class="input-text" id="inputEmail" required data-msg="Debes ingresar un email">
             </div>
             <div class="form_group" id="formIdDiv">
                 <label for="inputID" class="form_group_label">Cedula:</label>
                 <input type="number" name="cedula" maxlength="10" placeholder="1059265538" class="input-text"
-                required id="inputId">
+                required data-msg="Debes ingrear una cedula" id="inputId">
             </div>
             <div class="form_group" id="formPasswordDiv">
                 <label for="inputPassword" class="form_group_label">Contraseña:</label>
                 <input type="password" name="password" maxlength="40" placeholder="******" class="input-text" 
-                required id="inputPassword">
+                required data-msg="Debes ingresar una contraseña" id="inputPassword">
             </div>
+            <div class="form_group" id="formVerifyPasswordDiv">
+                <label for="inputVerifyPassword" class="form_group_label">Confirmar contraseña:</label>
+                <input type="password" name="VerifyPassword" maxlength="40" placeholder="******" class="input-text" 
+                required data-msg="Debes confirmar tu contraseña" id="inputVerifyPassword">
+            </div>
+
             <div class="form_group">
                 <input type="submit" value="Crear cuenta" class="input-button" id="buttonSubmit">
             </div>
         </form>
         <div class="left-container-bottom">
-            <!-- ARREGLAR REDIRIGIMIENTO -->
             <span>¿Ya tienes una cuenta? <a href="./login">Inicia sesion aqui</a></span>
         </div>
     </section>
 
     <section class="right_container">
         <div class="right_container_logo">
-            <!-- Verifica si el mensaje existe y es de tipo success -->
-            <% if (message && type === 'success') { %>
-                <div class="alert success"><%= message %></div>
 
-                <!-- Funcion que redirige al login -->
+            <div class="alert">
+                <span id="spanAlert"></span>
+            </div>
+
+            <% if (message && type == 'success') { %>
                 <script>
-                    setTimeout(() => {
-                        window.location.href = "/login";
-                    }, 3000);
+                    document.addEventListener("DOMContentLoaded", () => {
+                        mostrarMensaje('success', "<%= message %>");
+                    });
                 </script>
-            <% } %>
-            
-            <!-- Verifica que el mensaje exista y sea de tipo error -->
-            <% if (message && type === 'error') { %>
-                <div class="alert error"><%= message %></div>
-            <% } %>
+                
+            <% }%>
+
+            <% if (message && type == 'error') { %>
+                <script>
+                    document.addEventListener("DOMContentLoaded", () => {
+                        mostrarMensaje('error', "<%= message %>");
+                    });
+                </script>
+            <% }%>
+
         </div>
         <div class="right_container_img">
             <img src="../public/imgs/register/restaurante2.jpg" alt="Imagen restaurante">
         </div>
     </section>
-<script src="../public/js/register.js"></script>
+    <script src="../public/js/Register.js" ></script>
 </body>
 </html>

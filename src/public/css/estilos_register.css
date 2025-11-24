@@ -181,14 +181,22 @@ body {
     font-weight: 500;
 }
 
-.alert.success {
+.alertSuccess {
     background: #c1f7c4;
     color: #145a1f;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    font-weight: 500;
 }
 
-.alert.error {
+.alertError {
     background: #000000;
     color: #d4af37;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    font-weight: 500;
 }
 
 

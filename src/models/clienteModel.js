@@ -13,18 +13,17 @@ const Cliente = {
     },
 
     // Insertar clientes en la db
-    //------------------- VERIFICAR LA NUEVA VERSION QUE NO CREARA EL USUARIO DE UNA VEZ CON TELEFONO------
     async create({ name, email, cedula, password}){
         try {
             // Consulta sql
-            const sql = `INSERT INTO clientes(cedula_cliente, nombre_cliente, email_cliente, contraseña_cliente, id_rol_cliente)
+            const sql = `INSERT INTO Cliente(cedula_cliente, nombre_cliente, email_cliente, contraseña_cliente, rol_cliente)
             VALUES (?, ?, ?, ?, ?);`
             
             // Valores a insertar
-            const values = [cedula, name, email, password, 2]
+            const values = [cedula, name, email, password, 'Cliente']
 
             // Verificar si el usuario ya se encuentra registrado o no
-            const sql_verify = `SELECT cedula_cliente FROM clientes c WHERE c.cedula_cliente = ?`
+            const sql_verify = `SELECT cedula_cliente FROM Cliente c WHERE c.cedula_cliente = ?`
             const value_verify = cedula
 
             const [verify_result] = await pool.query(sql_verify, value_verify)
@@ -46,7 +45,7 @@ const Cliente = {
     async login({ cedula, password }){
         try{
             // 1) Verificar si la cedula ingresada ya ha sido registrada o no
-            const sql = `SELECT cedula_cliente FROM clientes c
+            const sql = `SELECT cedula_cliente FROM Cliente c
             WHERE c.cedula_cliente = ?`
             const value = cedula
 
@@ -57,7 +56,7 @@ const Cliente = {
             }
 
             // 2) Verificar si la contraseña ingresada es valida para la cedula ingresada
-            const sql_2 = `SELECT contraseña_cliente FROM clientes c
+            const sql_2 = `SELECT contraseña_cliente FROM Cliente c
             WHERE c.cedula_cliente = ?`
 
             const value_2 = cedula

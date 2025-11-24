@@ -13,7 +13,7 @@ const register = (req, res) =>{
 const submit = async (req, res) =>{
     try {
         // 1. Recibimos la informacion del formulario
-        const { name, email, cedula, password } = req.body;
+        const { name, email, cedula, password} = req.body;
 
         // 2. Guardamos en la DB usando el modelo
         await Client.create({
@@ -30,7 +30,6 @@ const submit = async (req, res) =>{
         })
     } catch (error) {
         console.error(error);
-
         res.render('../views/register.ejs', {
             message: error.message,
             type: "error"
