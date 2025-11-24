@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History reservations</title>
+    <link rel="stylesheet" href="../public/css/styleHistory.css">
+</head>
+<body>
+    <!-- Insertando el navbar -->
+    <%- include("../views/partials/navbar.ejs") %>
+
+    <section id="history-section" class="section active">
+        <div class="reservations">
+            <div class="futureReservations">
+                <span class="futureReservations-title">Future reservations</span>
+                <div class="futureReservation">
+                    <div class="reservationDate">
+                        <span class="date">22 - 31 - oct</span>
+                        <span class="hour">10:00</span>
+                    </div>
+                    <div class="tableReserved">
+                        <span>Table reserved</span>
+                        <span class="NTable">N°1</span>
+                    </div>
+                    <div class="saucer">
+                        <span>Requested saucer</span>
+                        <span class="fSaucer">Pollo apanado</span>
+                    </div>
+                    <button>
+                        <img src="../public/imgs/historial/delete_14337750.png" alt="img cancelar" class="img-cancelar" />
+                        Cancel reservation
+                    </button>
+                </div>
+                <div class="futureReservation">
+                    <div class="reservationDate">
+                        <span class="date">22 - 31 - oct</span>
+                        <span class="hour">10:00</span>
+                    </div>
+                    <div class="tableReserved">
+                        <span>Table reserved</span>
+                        <span>N°1</span>
+                    </div>
+                    <div class="saucer">
+                        <span>Requested saucer</span>
+                        <span>Pollo apanado</span>
+                    </div>
+                    <button>
+                        <img src="../public/imgs/historial/delete_14337750.png" alt="img cancelar" class="img-cancelar" />
+                        Cancel reservation
+                    </button>
+                </div>
+            </div>
+            <div class="pastReservations">
+                <span class="pastReservations-title">Past reservations</span>
+                <div class="pastReservation">
+                    <div class="reservationDate">
+                        <span class="date">22 - 31 - oct</span>
+                        <span class="hour">10:00</span>
+                    </div>
+                    <div class="tableReserved">
+                        <span>Table reserved</span>
+                        <span>N°1</span>
+                    </div>
+                    <div class="saucer">
+                        <span>Requested saucer</span>
+                        <span>Pollo apanado</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+
+
+
+
+

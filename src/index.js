@@ -7,7 +7,9 @@ const app = express()
 // Importamos rutas
 const registerRoutes = require('./routes/Register.router')
 const loginRoutes = require('./routes/login.router')
-const mainPageRoutes = require('./routes/mainRoutes')
+const menuRoutes = require('./routes/menuRoutes')
+const historyRoutes = require('./routes/history.router')
+const reservationRoutes = require('./routes/reservation.router')
 
 // Importamos el modulo de plantillas
 require('ejs') // No es necesario almacenarlo en una constante
@@ -29,8 +31,9 @@ app.use(express.urlencoded({extended: false}))
 // ------Rutas----------
 app.use("/register", registerRoutes) // RUTA REGISTER
 app.use("/login", loginRoutes) // RUTA LOGIN
-app.use("/homePage", mainPageRoutes) // Rutas de la pagina principal
-
+app.use("/homePage", menuRoutes) // Rutas de la pagina principal
+app.use("/history", historyRoutes)
+app.use("/reservation", reservationRoutes)
 
 // ------ Logica que queremos ejecutar luego de que la peticion
 // haya pasado por los middlewares y rutas comunes -------------

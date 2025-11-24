@@ -119,6 +119,20 @@ body {
     box-shadow: 0 0 10px #d4af37;
 }
 
+#formPasswordDiv div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#formPasswordDiv div  button img{
+    width: 20px;
+    height: 20px;
+}
+
+
+
 /*--------------Estilos referentes al link que redirige al login--------------*/
 .left-container-bottom {
     margin-left: 20px;

@@ -1,0 +1,71 @@
+/*--------------Barra de navegacion-------------*/
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 10%;
+    -webkit-box-shadow: 0px 5px 32px 0px rgba(0,0,0,0.95); 
+    box-shadow: 0px 5px 32px 0px rgba(0,0,0,0.95);
+    background-color: #0d3a4a;
+}
+
+.navbar-logo {
+    background-image: url(../imgs/Imagen_Logo.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 10%;
+}
+
+
+.navbar-points {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 30%;
+    gap: 20px;
+}
+
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 16px;     
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn span {
+    text-align: center;
+    overflow-wrap: break-word; 
+}
+
+.btn:hover {
+  background-color: #75d0fa;
+}
+
+.btn-icon {
+    width: 30px;
+    height: 30px;
+}
+
+
+.navbar-userInfo {
+    display: flex;
+    align-items: center;
+    padding: 10px 5px;
+    gap: 15px;
+    border-radius: 10px;
+    background-color: white;
+    margin-right: 2%;
+}
+
+.navbar-userInfo img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}

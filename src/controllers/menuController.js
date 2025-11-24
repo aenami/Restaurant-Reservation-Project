@@ -11,7 +11,7 @@ const baseRender = async (req, res) =>{
         const dinner = allProducts.filter(p => p.categoria_principal_producto === 'Dinner')
 
         // Le pasamos los productos a la vista y la renderizamos
-        res.render('mainPage.ejs', {
+        res.render('menu.ejs', {
             message: null,
             type: null,
             breakfast,
@@ -21,7 +21,7 @@ const baseRender = async (req, res) =>{
 
     } catch (error) {
         console.log(error)
-        res.render('mainPage.ejs', {
+        res.render('menu.ejs', {
             message: "Hubo un error cargando el menú.",
             type: "error",
             breakfast: [],

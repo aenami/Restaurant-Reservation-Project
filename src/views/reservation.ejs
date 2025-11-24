@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation | Cava & Corte</title>
+    <link rel="stylesheet" href="../public/css/syleReservations.css">
+</head>
+<body>
+    <!-- Incluyendo el partial del navbar -->
+    <%- include('../views/partials/navbar.ejs')%>
+
+    <section id="reservation-section" class="section active">
+        <form action="" class="reservationForm">
+            <div class="formSection">
+                <label for="listaPlatillos">Entrada</label>
+                <select name="listaPlatillos" id="">
+                    <option value="#" class="listaOpcion" selected>Selecciona un platillo</option>
+    
+    
+    
+                </select>
+            </div>
+            <div class="formSection">
+                <label for="listaMesas">Mesa</label>
+                <select name="listaMesas" id="">
+                    <option value="#" selected>Selecciona una mesa</option>
+    
+    
+    
+    
+    
+    
+                    <option value="#" class="listaOpcion">Mesa 4 - (6 personas)</option>
+                </select>
+            </div>
+            <div class="formSection">
+                <label for="fecha">Fecha</label>
+                <input type="date" id="fecha" name="fecha" required>
+            </div>
+            <div class="formSection">
+                <label for="hora">Hora</label>
+                <input type="time" id="hora" name="hora" min="17:00" max="23:00" required>
+            </div>
+            <input type="submit" id="btnSubmit" value="Confirmar reserva">
+        </form>
+    </section>
+</body>
+</html>
+
+
+
+

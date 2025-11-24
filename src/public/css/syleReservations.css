@@ -1,0 +1,160 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-color: #282726;
+}
+
+/*-------Css referente a la seccion de las reservas--------*/
+#reservation-section {
+    /* quitar el display fijo */
+    position: relative;
+    height: 92vh;
+    width: 100%;
+    background-image: url("../imgs/reserva/fondoRestaurante2.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#reservation-section.active {
+    display: flex !important; /* Para asegurar que override otros estilos */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Asegurar que .section.leaving tiene mayor especificidad */
+.main-section .section.leaving {
+    display: block !important;
+    animation: desaparecer 0.35s ease forwards;
+}
+
+/* Si es la sección de reservas, mantener el flex mientras sale */
+.main-section #reservation-section.leaving {
+    display: flex !important;
+}
+
+#reservation-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+/* Aseguramos que el texto quede encima */
+#reservation-section > * {
+  position: relative;
+  z-index: 2;
+}
+
+.reservationForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: rgba(13, 13, 13, 0.9);
+    padding: 40px;
+    border-radius: 15px;
+    border: 1px solid #d4af37;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+    animation: fadeIn 1s ease;
+}
+
+@media (min-width: 950px) {
+  .reservationForm {
+    width: 25%;
+  }
+}
+
+.formSection {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    color: white;
+}
+
+.formSection label{
+    font-size: 14px;
+}
+
+.formSection input {
+    padding: 12px;
+    border: 1px solid #555;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    font-size: 14px;
+    outline: none;
+    transition: border 0.3s;
+}
+
+.formSection input:focus {
+    border: 1px solid #d4af37;
+    box-shadow: 0 0 6px #d4af37;
+}
+
+#btnSubmit {
+    padding: 14px;
+    background: linear-gradient(90deg, #d4af37, #f5d76e);
+    border: none;
+    border-radius: 8px;
+    font-weight: lighter;
+    color: #000;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#btnSubmit:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #d4af37;
+}
+
+#hora::-webkit-calendar-picker-indicator {
+  filter: invert(45%) sepia(80%) saturate(500%) hue-rotate(200deg);
+}
+
+#fecha::-webkit-calendar-picker-indicator {
+  filter: invert(45%) sepia(80%) saturate(500%) hue-rotate(200deg);
+}
+
+/* Animación */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+/* ==== Estilos para el select ==== */
+.formSection select {
+  padding: 12px;
+  border: 1px solid #555;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  transition: border 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.formSection select:focus {
+  border: 1px solid #d4af37;
+  box-shadow: 0 0 6px #d4af37;
+}
+
+.formSection option {
+  background: #1a1a1a;
+  color: #fdfdfd;
+  padding: 8px;
+}

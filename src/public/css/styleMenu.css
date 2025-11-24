@@ -1,0 +1,228 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-color: #282726;
+}
+
+/*------------Css referente al carrousel infinito y titulo---------*/
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 90vh;
+    padding-top: 2%;
+    gap: 15px;
+    background-color: #282726;
+}
+
+.hero span {
+    font-size: 70px;
+    color: #d4af37;
+}
+
+@media (max-width: 680px){
+    .hero span {
+        font-size: 50px;
+    }
+}
+
+.slider {
+    overflow: hidden;         /* Oculta las imágenes que se salen */
+    width: 100%;            
+}
+
+.slider-track { 
+    display: flex;
+    align-items: center;
+    animation: scroll 20s linear infinite; /* Movimiento continuo */
+}
+
+.slider-track img {
+    margin-right: 10px;
+    border-radius: 10px;   
+    border-style: solid;
+    border-color: #dddad4;
+}
+
+.img1 {
+    height: 300px;
+    width: auto;
+}
+
+.img2 {
+    height: 260px;
+    width: auto;
+}
+
+.img3 {
+    height: 310px;
+    width: auto;
+}
+
+.img4 {
+    height: 250px;
+    width: auto;
+}
+
+.img5 {
+    height: 320px;
+    width: auto;
+}
+
+.img6 {
+    height: 240px;
+    width: auto;
+}
+
+.img7 {
+    height: 300px;
+    width: auto;
+}
+
+/* Animación */
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* Se mueve hasta la mitad del track duplicado */
+}
+
+/*---------Css referente a el cambio de secciones----------*/
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
+    animation: aparecer 0.4s ease;
+}
+
+@keyframes aparecer {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/*-------------Css referente a la seccion del menu-------------*/
+#menu-section {
+    /* dejar vacío: el layout se aplica sólo cuando está .active o .leaving */
+}
+
+#menu-section.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+/* garantizar que las secciones en salida permanezcan visibles para la animación */
+.section.leaving {
+    display: block; /* se muestra durante la animación */
+    animation: desaparecer 0.35s ease forwards;
+}
+
+/* si es específicamente el menú, mantener el layout flex mientras sale */
+#menu-section.leaving {
+    display: flex;
+}
+
+/* animación de desaparición */
+@keyframes desaparecer {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+/* cuando el menú está activo necesita layout flex */
+#menu-section.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+/*-------------Css referente a la seccion del menu-------------*/
+.typeMenu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    max-width: 80%;
+    padding: 20px 20px;
+    border-radius: 10px;
+}
+
+.typeMenu-title {
+    font-size: 35px;
+    color: #dddad4;
+    text-align: center;
+}
+
+
+.menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+@media (max-width: 600px) {
+  .menu {
+    grid-template-columns: 1fr; 
+  }
+}
+
+.menu-platillo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3%;
+    gap: 30px;
+    overflow-wrap: break-word; /* Para que el texto no se haga muy largo y se desborde*/
+    /* From https://css.glass */
+    background: #dddad4;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(252, 215, 114, 0.3);
+}
+
+/*El ancho de este contenedor debe poder variar y por lo tanto no le puedo definir el width*/
+.menu-platillo-conjunto {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.platillo-img {
+    width: 30%;
+    min-width: 80px;
+    height: 30%;
+    border-radius: 7px;
+}
+
+.menu-platillo-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.platillo-title {
+    font-size: 25px;
+}
+
+.platillo-precio {
+    font-size: 20px;
+}
+
+
