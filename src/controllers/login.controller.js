@@ -20,6 +20,9 @@ const login = async (req, res) =>{
 
         // Verificamos respuesta de la db
         if(result){
+            // Creamos el objeto de usuario que almacenaremos en nuestra session
+            req.flash('user', { cedula, password})
+            
             // Redirigiendo
             res.redirect('/homePage')
         }else{

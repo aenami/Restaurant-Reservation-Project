@@ -28,9 +28,9 @@ INSERT INTO Imagen_producto VALUES
 ('platillo6.jpg', 5),
 ('platillo6.jpg', 6);
 
-INSERT INTO Reserva (id_entrada_reserva, id_mesa_reserva, cedula_cliente_reserva) VALUES
-(1, 2, 25545884),
-(3, 1, 25545884);
+INSERT INTO Reserva (fecha_reserva, hora_reserva, id_entrada_reserva, id_mesa_reserva, cedula_cliente_reserva) VALUES
+('2025-11-25','14:02:56', 1, 2, 25545884),
+('2025-11-27','16:30:00', 3, 1, 25545884);
 
 -- Rol
 CREATE USER 'root2'@'localhost' IDENTIFIED BY 'Root2!';

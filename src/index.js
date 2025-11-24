@@ -3,6 +3,8 @@ const express = require('express')
 const path = require('path')
 
 const app = express() 
+const session = require('express-session')
+const flash = require('connect-flash')
 
 // Importamos rutas
 const registerRoutes = require('./routes/Register.router')
@@ -11,22 +13,32 @@ const menuRoutes = require('./routes/menuRoutes')
 const historyRoutes = require('./routes/history.router')
 const reservationRoutes = require('./routes/reservation.router')
 
-// Importamos el modulo de plantillas
-require('ejs') // No es necesario almacenarlo en una constante
-
-
 // ------Settings----------
 app.set('case sensitive Routing', true)
 app.set('appName', 'Express app')
 app.set('port', 3000)
 app.set('view-engine', 'ejs') // Definiendo el motor de plantillas que estaremos utilizando
 app.set('views', path.join(__dirname, './views')) // Definiendo la ruta que utilizaremos en las vitas
-
+        // Importamos el modulo de plantillas
+require('ejs') 
 
 // ------Middlewares--------
-app.use(express.json()) // Convierte las respuestas a json
-app.use(express.urlencoded({extended: false}))
+app.use(express.json()) // Entiende respuestas en formato json
+app.use(express.urlencoded({extended: false})) // Entiende los datos que vengan del formulario
+    // Creando el espacio en memoria que podremos compartir entre nuestras vistas
+app.use(session({
+    secret: 'secretkey',
+    saveUninitialized: false,
+    resave: false,
+}))
+app.use(flash())
 
+// ---Middleware para las variables globales
+//app.use((req, res, next) =>{
+    // Definiendo las variables globales
+
+    //next()
+//})
 
 // ------Rutas----------
 app.use("/register", registerRoutes) // RUTA REGISTER

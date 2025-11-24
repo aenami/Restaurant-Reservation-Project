@@ -5,7 +5,7 @@ const Producto = {
     async getAll(){
         // Funcion para que devuelva todos los platillos
         try {
-            const sql = `SELECT p.nombre_producto, p.descripcion_producto, p.precio_producto,
+            const sql = `SELECT p.id_producto, p.nombre_producto, p.descripcion_producto, p.precio_producto,
             p.categoria_principal_producto, p.categoria_secundaria_producto,
             i.ruta_imagen
             FROM Producto p

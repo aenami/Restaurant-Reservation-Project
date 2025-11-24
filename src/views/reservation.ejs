@@ -11,25 +11,25 @@
     <%- include('../views/partials/navbar.ejs')%>
 
     <section id="reservation-section" class="section active">
-        <form action="" class="reservationForm">
+        <form action="./reservation" class="reservationForm" method="post">
             <div class="formSection">
                 <label for="listaPlatillos">Entrada</label>
-                <select name="listaPlatillos" id="">
-                    <option value="#" class="listaOpcion" selected>Selecciona un platillo</option>
+                <select name="Entrada" id="" required>
+                    <option value="" class="listaOpcion" selected>Selecciona un platillo</option>
                     <% if(products){%>
                         <% products.forEach(entrada => { %>
-                            <option value="#" class="listaOpcion"> <%= entrada.nombre_producto %> </option>
+                            <option value="<%= entrada.id_producto%>" class="listaOpcion"> <%= entrada.nombre_producto %> </option>
                         <% }); %>
                     <% }%>
                 </select>
             </div>
             <div class="formSection">
                 <label for="listaMesas">Mesa</label>
-                <select name="listaMesas" id="">
-                    <option value="#" selected>Selecciona una mesa</option>
+                <select name="Mesa" id="" required>
+                    <option value="" class="listaOpcion" selected>Selecciona una mesa</option>
                     <% if(tables){%>
                         <% tables.forEach(table =>{ %>
-                            <option value="#" class="listaOpcion"> Mesa <%= table.id_mesa%> - ( <%= table.tamaño_mesa %> personas) </option>
+                            <option value="<%= table.id_mesa %>" class="listaOpcion"> Mesa <%= table.id_mesa%> - ( <%= table.tamaño_mesa %> personas) </option>
                         <% }) %>
                     <% }%>
                 </select>
@@ -43,8 +43,12 @@
                 <input type="time" id="hora" name="hora" min="17:00" max="23:00" required>
             </div>
             <input type="submit" id="btnSubmit" value="Confirmar reserva">
+            <% if(message) {%>
+                <span> <%= message %> </span>
+            <% } %>
         </form>
     </section>
+    <script src="../public/js/reservation.js"></script>
 </body>
 </html>
 

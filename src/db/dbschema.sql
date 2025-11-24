@@ -57,6 +57,8 @@ CREATE TABLE IF NOT EXISTS Imagen_producto(
 -- table reservas
 CREATE TABLE IF NOT EXISTS Reserva(
     id_reserva INT AUTO_INCREMENT PRIMARY KEY,
+    fecha_reserva DATE,
+    hora_reserva TIME,
 
     id_entrada_reserva TINYINT UNSIGNED, 
     id_mesa_reserva TINYINT UNSIGNED , 
