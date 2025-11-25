@@ -10,7 +10,7 @@
 }
 
 body {
-    background-color: #282726;
+    background-color: #1a1a1a;
 }
 
 /*-----------Css referente a la seccion del historial-------------*/
@@ -22,7 +22,6 @@ body {
     display: flex;
     flex-direction: column;
     gap: 30px;
-
 }
 
 .futureReservations {
@@ -34,11 +33,13 @@ body {
 .futureReservation, .pastReservation {
     display: flex;
     flex-direction: row;
-    gap: 5%;
-    padding: 10px;
-    background-color: white;
-    max-width: 800px;
-    border-radius: 4px;
+    align-items: center;
+    gap: 8%;
+    padding: 20px;
+    background-color: #0a0a0a;
+    max-width: 900px;
+    border-radius: 10px;
+    border: 1px solid #2b2b2b;
 }
 
 .futureReservations-title, .pastReservations-title {
@@ -54,11 +55,14 @@ body {
 }
 
 .reservationDate {
+    display: flex;
+    gap: 15px;
     border-radius: 5px;
-    background-color: #eceef9;
+    background-color: #1a1a1a;;
+    border: 1px solid #2b2b2b;
 }
 
-.futureReservation button, .pastReservation button {
+.futureReservation button{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -67,17 +71,55 @@ body {
     border: none;
     border-radius: 8px;
     cursor: pointer;
+    background-color: #210d0d;
+    color: #c15c57;
+    border: 1px solid #c15c57;
 }
 
 .tableReserved span:first-child, .saucer span:first-child {
     font-size: 18px;
 }
 
-.fSaucer, .NTable {
-    color: #6a6966;
-}
-
 .img-cancelar {
     width: 25px;
     height: 25px;
+}
+
+/* ------Estilos referentes a las letras------*/
+
+.tableTitle, .saucerTitle {
+    color: #6d6c6d;
+}
+
+.hour, .NTable, .fSaucer, .white {
+    color: #e6e2e6;
+}
+
+.secondTitle {
+    font-size: 18px;
+    color: #979ba0;
+}
+
+/* Estilos referentes a la parte de fecha y hora*/
+.divDateTime {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.datetime {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.datetime img {
+    width: 22px;
+    height: 22px;
+}
+
+.datetime span {
+    color: #B0A575;
 }
