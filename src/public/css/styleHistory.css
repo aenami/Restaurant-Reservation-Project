@@ -24,7 +24,7 @@ body {
     gap: 30px;
 }
 
-.futureReservations {
+.futureReservations, .pastReservations {
     display: flex;
     flex-direction: column;
     gap: 25px;

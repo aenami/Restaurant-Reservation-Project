@@ -16,70 +16,89 @@
                 <span class="futureReservations-title">Future reservations</span>
                 <span class="secondTitle">Gestiona tus reservas</span>
 
-
-                <div class="futureReservation">
-                    <div class="reservationDate">
-                        <div class="divDateTime">
-                            <div class="datetime"> 
-                                <img src="../public/imgs/historial/icons8-calendario-96.png" alt="">
-                                <span>Fecha</span>
+                <!-- Mostrando todas las reservas futuras asociadas al usuario-->
+                <% if(futureReservations){%>
+                    <% futureReservations.forEach(reserv =>{ %>
+                        <div class="futureReservation">
+                            <div class="reservationDate">
+                                <div class="divDateTime">
+                                    <div class="datetime"> 
+                                        <img src="../public/imgs/historial/icons8-calendario-96.png" alt="">
+                                        <span>Fecha</span>
+                                    </div>
+                                    <span class="white"> <%- reserv.fecha_reserva.toISOString().split("T")[0] %>  </span>
+                                </div>
+                                <div class="divDateTime">
+                                    <div class="datetime"> 
+                                        <img src="../public/imgs/historial/icons8-reloj-150 (1).png" alt="">
+                                        <span>Hora</span>
+                                    </div>
+                                    <span class="white"> <%- reserv.hora_reserva %>  </span>
+                                </div>
                             </div>
-                            <span class="white">22 - 31 - oct</span>
-                        </div>
-                        <div class="divDateTime">
-                            <div class="datetime"> 
-                                <img src="../public/imgs/historial/icons8-reloj-150 (1).png" alt="">
-                                <span>Hora</span>
+                            <div class="tableReserved">
+                                <span class="tableTitle">Table reserved</span>
+                                <span class="white"> <%- reserv.id_mesa_reserva %>  </span>
                             </div>
-                            <span class="white">10:00</span>
+                            <div class="saucer">
+                                <span class="saucerTitle">Requested saucer</span>
+                                <span class="white"> <%- reserv.nombre_entrada %> </span>
+                            </div>
+                            <button>
+                                <img src="../public/imgs/historial/icons8-x-96.png" alt="img cancelar" class="img-cancelar" />
+                                Cancel reservation
+                            </button>
                         </div>
-                    </div>
-                    <div class="tableReserved">
-                        <span class="tableTitle">Table reserved</span>
-                        <span class="white">N°1</span>
-                    </div>
-                    <div class="saucer">
-                        <span class="saucerTitle">Requested saucer</span>
-                        <span class="white">Pollo apanado</span>
-                    </div>
-                    <button>
-                        <img src="../public/imgs/historial/icons8-x-96.png" alt="img cancelar" class="img-cancelar" />
-                        Cancel reservation
-                    </button>
-                </div>
+                    <% }) %>
+                <% }else{ %>
+                    <!-- Mostrando mensaje de que el usuario no tiene reservas -->
 
+
+                <%} %>
+
+                
 
             </div> 
             <div class="pastReservations">
                 <span class="pastReservations-title">Past reservations</span>
 
+                <!-- Mostrando reservas pasadas asociadas al usuario -->
+                <% if(pastReservations){%>
+                    <% pastReservations.forEach((reserv) =>{ %>
+                        <div class="futureReservation">
+                            <div class="reservationDate">
+                                <div class="divDateTime">
+                                    <div class="datetime"> 
+                                        <img src="../public/imgs/historial/icons8-calendario-96.png" alt="">
+                                        <span>Fecha</span>
+                                    </div>
+                                    <span class="white"> <%- reserv.fecha_reserva.toISOString().split("T")[0] %> </span>
+                                </div>
+                                <div class="divDateTime">
+                                    <div class="datetime"> 
+                                        <img src="../public/imgs/historial/icons8-reloj-150 (1).png" alt="">
+                                        <span>Hora</span>
+                                    </div>
+                                    <span class="white"> <%- reserv.hora_reserva %> </span>
+                                </div>
+                            </div>
+                            <div class="tableReserved">
+                                <span class="tableTitle">Table reserved</span>
+                                <span class="white"> <%- reserv.id_mesa_reserva %> </span>
+                            </div>
+                            <div class="saucer">
+                                <span class="saucerTitle">Requested saucer</span>
+                                <span class="white"> <%- reserv.nombre_entrada%>  </span>
+                            </div>
+                        </div> 
+                    <% }) %>
+                <% }else{ %>
+                    <!-- Mostrando mensaje de que el usuario no tiene reservas -->
 
-                <div class="futureReservation">
-                    <div class="reservationDate">
-                        <div class="divDateTime">
-                            <div class="datetime"> 
-                                <img src="../public/imgs/historial/icons8-calendario-96.png" alt="">
-                                <span>Fecha</span>
-                            </div>
-                            <span class="white">22 - 31 - oct</span>
-                        </div>
-                        <div class="divDateTime">
-                            <div class="datetime"> 
-                                <img src="../public/imgs/historial/icons8-reloj-150 (1).png" alt="">
-                                <span>Hora</span>
-                            </div>
-                            <span class="white">10:00</span>
-                        </div>
-                    </div>
-                    <div class="tableReserved">
-                        <span class="tableTitle">Table reserved</span>
-                        <span class="white">N°1</span>
-                    </div>
-                    <div class="saucer">
-                        <span class="saucerTitle">Requested saucer</span>
-                        <span class="white">Pollo apanado</span>
-                    </div>
-                </div> 
+
+                <%} %>
+
+                
 
 
                 

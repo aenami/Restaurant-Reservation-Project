@@ -4,7 +4,6 @@ const path = require('path')
 
 const app = express() 
 const session = require('express-session')
-const flash = require('connect-flash')
 
 // Importamos rutas
 const registerRoutes = require('./routes/Register.router')
@@ -31,14 +30,6 @@ app.use(session({
     saveUninitialized: false,
     resave: false,
 }))
-app.use(flash())
-
-// ---Middleware para las variables globales
-//app.use((req, res, next) =>{
-    // Definiendo las variables globales
-
-    //next()
-//})
 
 // ------Rutas----------
 app.use("/register", registerRoutes) // RUTA REGISTER
@@ -46,6 +37,7 @@ app.use("/login", loginRoutes) // RUTA LOGIN
 app.use("/homePage", menuRoutes) // Rutas de la pagina principal
 app.use("/history", historyRoutes)
 app.use("/reservation", reservationRoutes)
+
 
 // ------ Logica que queremos ejecutar luego de que la peticion
 // haya pasado por los middlewares y rutas comunes -------------

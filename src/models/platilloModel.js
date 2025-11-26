@@ -16,6 +16,18 @@ const Producto = {
         } catch (error) {
             console.log(`ERROR: ${error}`)
         }
+    },
+
+    async getSaucerName(id_entrada){
+        try {
+            const sql = `SELECT nombre_producto FROM Producto p WHERE p.id_producto = ?;`
+            const value = id_entrada;
+
+            const [rows] = await pool.query(sql, value);
+            return rows;
+        } catch (error) {
+            console.log(error)
+        }
     }
 }
 
