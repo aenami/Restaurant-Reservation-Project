@@ -14,11 +14,11 @@
         <div class="reservations">
             <div class="futureReservations">
                 <span class="futureReservations-title">Future reservations</span>
-                <span class="secondTitle">Gestiona tus reservas</span>
-
+                
                 <!-- Mostrando todas las reservas futuras asociadas al usuario-->
-                <% if(futureReservations){%>
+                <% if(futureReservations.length !== 0){%>
                     <% futureReservations.forEach(reserv =>{ %>
+                        <span class="secondTitle">Gestiona tus reservas</span>
                         <div class="futureReservation">
                             <div class="reservationDate">
                                 <div class="divDateTime">
@@ -44,7 +44,7 @@
                                 <span class="saucerTitle">Requested saucer</span>
                                 <span class="white"> <%- reserv.nombre_entrada %> </span>
                             </div>
-                            <button>
+                            <button class="btn">
                                 <img src="../public/imgs/historial/icons8-x-96.png" alt="img cancelar" class="img-cancelar" />
                                 Cancel reservation
                             </button>
@@ -52,18 +52,15 @@
                     <% }) %>
                 <% }else{ %>
                     <!-- Mostrando mensaje de que el usuario no tiene reservas -->
-
-
-                <%} %>
-
-                
+                    <h3>No tienes ninguna reserva creada en este momento</h3>
+                <%} %>               
 
             </div> 
             <div class="pastReservations">
                 <span class="pastReservations-title">Past reservations</span>
 
                 <!-- Mostrando reservas pasadas asociadas al usuario -->
-                <% if(pastReservations){%>
+                <% if(pastReservations.length !== 0){%>
                     <% pastReservations.forEach((reserv) =>{ %>
                         <div class="futureReservation">
                             <div class="reservationDate">
@@ -94,17 +91,13 @@
                     <% }) %>
                 <% }else{ %>
                     <!-- Mostrando mensaje de que el usuario no tiene reservas -->
-
-
+                    <h3>No tienes ninguna reservas pasadas</h3>
                 <%} %>
-
-                
-
-
-                
+ 
             </div>
         </div>
     </section>
+    <script src="../public/js/history.js"></script>
 </body>
 </html>
 

@@ -4,44 +4,37 @@ const { Producto } = require('../models/platilloModel')
 
 
 // -----------------Funciones para apoyarse---------------
-function obtenerMilisegundos(date){
-    return date.getHours()*3600000 +
-        date.getMinutes()*60000 +
-        date.getSeconds()*1000;
-}
-
 function filtrarReservas(reservationss, opcion){
 	// Variables para filtrar
-	const today = new Date(); // Objeto que almacena fecha de hoy
+	const todayComplete = new Date(); // Objeto que almacena fecha y hora de hoy
+    const todayIncomplete = new Date(todayComplete.getFullYear(), todayComplete.getMonth(), todayComplete.getDate()) // Objeto que solo almacenara fecha
 
 	// Filtrando reservas 
 	const reservations = reservationss.filter((reserv) => {
-		// Convirtiendo el objeto fecha fecha a un formato valido
-		const fecha = reserv.fecha_reserva; // objeto Date
-		const soloFecha = fecha.toISOString().split("T")[0];
-
-		// Creando el objeto fecha valido para la reserva actual
-		const reservFecha = new Date(`${soloFecha}T${reserv.hora_reserva}`);
+        const reservIncomplete = new Date(reserv.fecha_reserva.getFullYear(), reserv.fecha_reserva.getMonth(), reserv.fecha_reserva.getDate())
+        const reservComplete = new Date(`${reservIncomplete}T${reserv.hora_reserva}`)
 
         switch (opcion) {
             // Caso para las reservas futuras
             case 1:
                 // Verificando si la fecha de la reserva es de hoy
-                if (reservFecha.getDate === today.getDate) {
+                if (reservIncomplete === todayIncomplete) {
                     return (
-                        obtenerMilisegundos(reservFecha) > obtenerMilisegundos(today)
+                        reservComplete.getHours() > todayComplete.getHours()
                     );
                 }
 
-            return reservFecha > today;
+            return reservIncomplete > todayIncomplete;
             // Caso para las reservas pasadas
             case 2:
                 // Verificando si la fecha de la reserva es de hoy
-                if(reservFecha.getDate === today.getDate){
-                    return obtenerMilisegundos(reservFecha) < obtenerMilisegundos(today)
+                if (reservIncomplete === todayIncomplete) {
+                    return (
+                        reservComplete.getHours() < todayComplete.getHours()
+                    );
                 }
 
-            return reservFecha < today
+            return reservIncomplete < todayIncomplete;
         }	
 	});
 
@@ -72,7 +65,7 @@ const baseRender = async (req, res) =>{
         for (let reservation of pastReservations) {
             let saucerName = await Producto.getSaucerName(reservation.id_entrada_reserva);
             reservation.nombre_entrada = saucerName[0].nombre_producto;
-        }
+        }   
 
         res.render('historyReservations.ejs',{
             futureReservations,

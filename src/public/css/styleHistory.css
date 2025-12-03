@@ -123,3 +123,8 @@ body {
 .datetime span {
     color: #B0A575;
 }
+
+/* ----Estilos referentes al empty-state------*/
+.futureReservations h3, .pastReservations h3{
+    color: #979ba0;
+}
