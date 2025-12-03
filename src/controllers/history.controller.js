@@ -69,13 +69,32 @@ const baseRender = async (req, res) =>{
 
         res.render('historyReservations.ejs',{
             futureReservations,
-            pastReservations
+            pastReservations,
+            message: null
         })
     } catch (error) {
         console.log(error)
     }
 }
 
+const deleteReservation = async (req, res) =>{
+    // 1. Tomando el id de la reserva a eliminar
+    const idReserv = req.params.idReserva
+    
+    try {
+        // 2. Llamando la funcion del modelo que se encargara de eliminar la reserva
+        await Reserva.deleReservation(idReserv)
+
+        // 3. Renderizar nuevamente la pagina (Ya no deberia de aparecer la reserva)
+        return res.json({ ok: true, redirect: "/history", message: 'La reserva ha sido eliminada exitosamente!' });
+
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+
 module.exports ={
     baseRender,
+    deleteReservation,
 }

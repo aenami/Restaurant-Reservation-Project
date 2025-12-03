@@ -31,6 +31,20 @@ const Reserva = {
             console.log(error)
         }
     },
+
+    async deleReservation(id){
+        try {
+            // REALIZAR EL DELETE A LA DB
+            const sql = `DELETE FROM Reserva r WHERE r.id_reserva = ?`
+            const value = id
+
+            await pool.query(sql, value)
+
+        } catch (error) {
+            console.log(error)
+        }
+    },
+
 }
 
 module.exports = {

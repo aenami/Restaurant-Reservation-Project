@@ -4,4 +4,6 @@ const router = express.Router()
 
 router.get('/', historyController.baseRender)
 
+router.delete('/:idReserva', historyController.deleteReservation)
+
 module.exports = router;

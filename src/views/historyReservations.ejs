@@ -10,15 +10,15 @@
     <!-- Insertando el navbar -->
     <%- include("../views/partials/navbar.ejs") %>
 
-    <section id="history-section" class="section active">
+    <section id="history-section">
         <div class="reservations">
             <div class="futureReservations">
                 <span class="futureReservations-title">Future reservations</span>
                 
                 <!-- Mostrando todas las reservas futuras asociadas al usuario-->
                 <% if(futureReservations.length !== 0){%>
+                    <span class="secondTitle">Gestiona tus reservas</span>
                     <% futureReservations.forEach(reserv =>{ %>
-                        <span class="secondTitle">Gestiona tus reservas</span>
                         <div class="futureReservation">
                             <div class="reservationDate">
                                 <div class="divDateTime">
@@ -44,7 +44,7 @@
                                 <span class="saucerTitle">Requested saucer</span>
                                 <span class="white"> <%- reserv.nombre_entrada %> </span>
                             </div>
-                            <button class="btn">
+                            <button class="btn" data-reserva-id = "<%- reserv.id_reserva %>">
                                 <img src="../public/imgs/historial/icons8-x-96.png" alt="img cancelar" class="img-cancelar" />
                                 Cancel reservation
                             </button>
@@ -97,6 +97,24 @@
             </div>
         </div>
     </section>
+
+    <div id="modal">
+        <h3>¿Estas seguro de que quieres eliminar esta reserva?</h3>
+        <div>
+            <button id="btn-yes">
+                Continuar
+            </button>
+            <button id="btn-no">
+                Cancelar
+            </button>
+        </div>
+    </div>
+
+    <div id="modalInfo">
+        <img src="../public/imgs/historial/icons8-información-250.png" alt="Icono de informacion">
+        <h3>La reserva ha sido eliminada exitosamente</h3>
+    </div>
+
     <script src="../public/js/history.js"></script>
 </body>
 </html>
