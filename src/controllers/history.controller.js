@@ -67,13 +67,19 @@ const baseRender = async (req, res) =>{
             reservation.nombre_entrada = saucerName[0].nombre_producto;
         }   
 
+        // Obteniendo la mensaje del backend si es q lo hay
+        // req.query.msg y req.query.type vienen ya decodificados por Express
+        const message = req.query.msg || null;
+        const type = req.query.type || null;
+
         res.render('historyReservations.ejs',{
             futureReservations,
             pastReservations,
-            message: null
+            flash: { message, type }
         })
     } catch (error) {
         console.log(error)
+        res.status(500).send("Error interno");
     }
 }
 
@@ -85,11 +91,24 @@ const deleteReservation = async (req, res) =>{
         // 2. Llamando la funcion del modelo que se encargara de eliminar la reserva
         await Reserva.deleReservation(idReserv)
 
-        // 3. Renderizar nuevamente la pagina (Ya no deberia de aparecer la reserva)
-        return res.json({ ok: true, redirect: "/history", message: 'La reserva ha sido eliminada exitosamente!' });
+        // 3. Creamos la respuesta que mostrara el frontend
+        const msg = encodeURIComponent('Reserva eliminada correctamente');
+        const type = encodeURIComponent('success');
+
+        // 4. Renderizar nuevamente la pagina (Ya no deberia de aparecer la reserva)
+        return res.json({ ok: true, redirect: `/history?msg=${msg}&type=${type}`});
 
     } catch (error) {
         console.log(error)
+
+        // Devolvemos los mensajes de error
+        const msg = encodeURIComponent('Error al eliminar la reserva');
+        const type = encodeURIComponent('error');
+
+        return res.status(500).json({
+            ok: false,
+            redirect: `/history?msg=${msg}&type=${type}`
+        });
     }
 }
 

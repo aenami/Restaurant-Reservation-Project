@@ -110,12 +110,29 @@
         </div>
     </div>
 
-    <div id="modalInfo">
+    <!-- Como el modal va a estar con opacidad 0 al inicio, puedo colocarlo aqui sin problemas -->
+     <div id="modalInfo">
         <img src="../public/imgs/historial/icons8-información-250.png" alt="Icono de informacion">
-        <h3>La reserva ha sido eliminada exitosamente</h3>
+        <h3> <%= flash.message %> </h3>
+        <button id="closeInfoModal">
+            Cerrar
+        </button>
     </div>
 
+    <!-- Cargo el script antes de la llamada de la funcion js -->
     <script src="../public/js/history.js"></script>
+
+    <% if(flash.message !== null){ %>
+        <script>
+            const message = '<%= flash.message %>';
+            const type = '<%= flash.type %>';
+            showInfoModal(message, type);
+
+            // Quitar los parámetros de la URL
+            //history.replaceState(null, "", "/history");
+        </script>
+    <% } %>
+   
 </body>
 </html>
 

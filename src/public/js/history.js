@@ -54,6 +54,9 @@ document.addEventListener("DOMContentLoaded", ()=>{
             if (data.redirect) {
                 // Volvemos a renderizar esta vista
                 window.location.href = data.redirect;
+            }else {
+                // Manejo alternativo si backend no envía redirect
+                console.error("No redirect recibido");
             }
 
         } catch (error) {
@@ -61,6 +64,27 @@ document.addEventListener("DOMContentLoaded", ()=>{
         }
     })
 
+    // Evento de cierre para el modal de info
+    const btnCloseModal = document.querySelector('#closeInfoModal')
+    const modalInfo = document.querySelector('#modalInfo');
+
+    btnCloseModal.addEventListener('click', ()=>{
+        modalInfo.classList.remove('active')
+        fondo.classList.remove('active')
+        
+    })
 
 })
+
+// Parte encargada de mostrar el modal que contendra la respuesta de la db
+function showInfoModal(message, type){
+    const modal = document.querySelector('#modalInfo');
+    const fondo = document.querySelector('#history-section');
+
+    // Agregarle la clase active
+    modal.classList.add('active')
+
+    // Agregar el blur
+    fondo.classList.add('active')
+}
 
