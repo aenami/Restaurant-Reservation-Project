@@ -3,6 +3,9 @@ const { Producto } = require('../models/platilloModel')
 
 const baseRender = async (req, res) =>{
     try {
+        // USAR UNA VARIABLE GLOBAL CON FLASH Y ESO QUE TE ENSEÑO FAZT PARA QUE LAS VISTAS PUEDAN ACCEDER DIRECTAMENTE A ESAS VARIABLES Y UTILIZAR  SUS PROPIEDADES
+        
+
         // Traemos todos los platilllos de la db
         const allProducts = await Producto.getAll()
         // Filtramos por categoria_principal_producto

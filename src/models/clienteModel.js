@@ -71,6 +71,19 @@ const Cliente = {
             console.log(`ERROR: ${error.message}`);
             throw new Error(error.message);
         }
+    },
+
+    async getName(id){
+        try {
+            const sql = `SELECT nombre_cliente from Cliente c WHERE c.cedula_cliente = ?`
+            const value = id
+
+            const [rows] = await pool.query(sql, value)
+            const name = rows[0].nombre_cliente
+            return name
+        } catch (error) {
+            console.log(error)
+        }
     }
 }
 

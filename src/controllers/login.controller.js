@@ -20,8 +20,10 @@ const login = async (req, res) =>{
 
         // Verificamos respuesta de la db
         if(result){
+            // Traemos el nombre del usuario
+            const name = await Client.getName(cedula)
             // Creamos el objeto de usuario que almacenaremos en nuestra session
-            req.session.user = { cedula, password}
+            req.session.user = { cedula, password, name}
 
             // Redirigiendo
             res.redirect('/homePage')

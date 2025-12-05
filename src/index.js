@@ -30,6 +30,11 @@ app.use(session({
     saveUninitialized: false,
     resave: false,
 }))
+        // Middleware para almacenar la session del usuario actual
+app.use((req, res, next) =>{
+    res.locals.usuarioActual = req.session.user || null;
+    next();
+})
 
 // ------Rutas----------
 app.use("/register", registerRoutes) // RUTA REGISTER
